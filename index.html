@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
+    <!-- JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <title>Document</title>
 </head>
 
@@ -17,21 +19,135 @@
                     SHOP NOW
                 </a></span></p>
         <div class="px-2 py-3 cursor-pointer">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+            <!-- X ICON -->
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="size-4">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
             </svg>
         </div>
     </div>
     <!-- END OF ANNOUNCEMENT BAR -->
 
-    <div class="bg-[#d6d2c4] relative h-9 md:h-14">
-        
-        
-        <div class="flex items-center justify-center z-[3] h-full">
-            <h1 class="mx-auto text-center text-2xl md:text-3xl font-bold">PAPATUI</h1>
+    <!-- START OF HEADER -->
+    <div class="bg-[#d6d2c4]">
+        <div class="h-14 md:h-auto 2xl:h-[88px] relative">
+            <div class="flex items-center justify-center z-[3] h-full">
+                <!-- <h1 class="mx-auto text-center text-2xl md:text-3xl font-bold">PAPATUI</h1> -->
+                <img class="mx-auto h-9 w-[150px] object-contain" src="./assets/Papatui_Header_Logo.png" alt=""
+                    srcset="">
+            </div>
+
+            <div id="mobile-nav-button_open"
+                class="absolute top-0 left-[18px] h-full flex items-center cursor-pointer z-[4]">
+                <!-- BARS ICON -->
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+
+            </div>
+
+            <div class="absolute top-0 right-[18px] h-full flex items-center gap-3.5  z-[4]">
+                <div class="h-full flex items-center relative cursor-pointer">
+                    <!-- CART ICON -->
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-5">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                    </svg>
+                    <div class="relative">
+                        <span
+                            class="absolute -top-[12px] -right-[5px] min-w-[14px] leading-[12px] text-[9px] px-[3px] py-[1px] text-center text-white tracking-[0] rounded-[15px] bg-[#212322]">
+                            1
+                        </span>
+                    </div>
+                </div>
+                <div class="h-full flex items-center cursor-pointer">
+                    <!-- SEARCH ICON -->
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-5">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                    </svg>
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+    <!-- END OF HEADER -->
+
+    <!-- START OF MOBILE NAV -->
+    <div
+        class="mobile__nav__drawer__bg fixed top-0 left-0 w-full h-full z-[1042] overflow-hidden bg-[#0b0b0b66] opacity-50 invisible transition-opacity duration-200 ease-in-out">
+        <div
+            class="mobile__nav__drawer__open fixed top-0 left-[-100%] z-[1043] h-full w-[480px] max-w-[calc(100vw-24px)] overflow-hidden overflow-y-auto bg-white pb-[120px] transition-[left] duration-400 ease-in-out outline-none">
+            <!-- START OF MOBILE HEADER -->
+            <div class="h-[72px] flex justify-between items-center">
+                <div id="mobile-nav-button-close" class="ml-3 w-fit">
+                    <!-- X ICON -->
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-8">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                    </svg>
+                </div>
+
+                <div class="mr-3">
+                    <a class="flex items-center pt-[18px] pb-[18px] pl-[18px]">
+                        <!-- USER ICON -->
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-5">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                        </svg>
+
+                        <span class="pl-1.5 text-xs">Log in</span>
+                    </a>
+
+                </div>
+            </div>
+            <!-- END OF MOBILE HEADER -->
+            <!-- START OF MOBILE MENU -->
+            <ul class="ml-4.5 mr-3 divide-y divide-[rgba(33,35,34,0.2)]">
+                <li>
+                    <a class="text-xl py-7 block tracking-[1px]">Shop All</a>
+                </li>
+                <li>
+                    <a class="text-xl py-7 tracking-[1px] flex items-center justify-between">
+                        <span class="block">Shop by Category</span>
+                        <span class="block"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                            </svg>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a class="text-xl py-7 block tracking-[1px]">Best Sellers</a>
+                </li>
+                <li>
+                    <a class="text-xl py-7 block tracking-[1px]">About PAPATUI<sup>&trade;</sup></a>
+                </li>
+            </ul>
+            <!-- END OF MOBILE MENU -->
+            <!-- START OF MOBILE SOCIALS -->
+            <div class="ml-4.5 mr-3 flex items-center gap-2">
+                <a class="w-7 h-7 flex items-center justify-center">
+                    <img class="w-5 h-5" src="./assets/papatui_instagram.png" alt="">
+                </a>
+                <a class="w-7 h-7 flex items-center justify-center">
+                    <img class="w-5 h-5" src="./assets/papatui-tiktok.png" alt="">
+                </a>
+            </div>
+            <!-- END OF MOBILE SOCIALS -->
         </div>
     </div>
+    <!-- END OF MOBILE NAV -->
+
+    <script src="/js/app.js"></script>
 </body>
 
 </html>

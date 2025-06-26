@@ -82,9 +82,9 @@
 
     <!-- START OF MOBILE NAV -->
     <div
-        class="mobile__nav__drawer__bg fixed top-0 left-0 w-full h-full z-[1042] overflow-hidden bg-[#0b0b0b66] opacity-50 invisible transition-opacity duration-200 ease-in-out">
+        class="mobile__nav__drawer__bg fixed top-0 left-0 w-full h-full z-[1042] bg-[#0b0b0b66] opacity-0 invisible transition-opacity duration-500 ease-in-out">
         <div
-            class="mobile__nav__drawer__open fixed top-0 left-[-100%] z-[1043] h-full w-[480px] max-w-[calc(100vw-24px)] overflow-hidden overflow-y-auto bg-white pb-[120px] transition-[left] duration-400 ease-in-out outline-none">
+            class="mobile__nav__drawer__open fixed top-0 left-[-100%] z-[1043] h-full w-[480px] max-w-[calc(100vw-24px)] overflow-hidden overflow-y-auto bg-white pb-[120px] transition-[left] duration-500 ease-in-out outline-none">
             <!-- START OF MOBILE HEADER -->
             <div class="h-[72px] flex justify-between items-center">
                 <div id="mobile-nav-button-close" class="ml-3 w-fit">
@@ -112,11 +112,11 @@
             <!-- END OF MOBILE HEADER -->
             <!-- START OF MOBILE MENU -->
             <ul class="ml-4.5 mr-3 divide-y divide-[rgba(33,35,34,0.2)]">
-                <li>
+                <li class="mobile-menu-list-item">
                     <a class="text-xl py-7 block tracking-[1px]">Shop All</a>
                 </li>
-                <li>
-                    <a class="text-xl py-7 tracking-[1px] flex items-center justify-between">
+                <li class="mobile-menu-list-item">
+                    <a class="mobile-menu-list-item__link text-xl py-7 tracking-[1px] flex items-center justify-between">
                         <span class="block">Shop by Category</span>
                         <!-- RIGHT ARROW ICON -->
                         <span class="block"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -126,13 +126,13 @@
                         </span>
                     </a>
                     <div
-                        class="mobile-nav__subcontainer absolute top-0 bottom-0 right-[-100%] w-full h-full bg-white z-[4] overflow-y-scroll pb-[25px] transition-[right] duration-500 ease-in-out">
+                        class="mobile-nav__subcontainer absolute top-0 bottom-0 right-[-100%] w-full h-full bg-white z-[1044] overflow-y-scroll pb-[25px] transition-[right] duration-500 ease-in-out">
                         <div class="relative">
                             <div class="relative">
                                 <img class="h-60 w-full object-cover"
                                     src="./assets/mobile-secondary-subnav-banner_completefacecare_scent_uncented__01.png"
                                     alt="">
-                                <div class="absolute top-[24px] left-[24px] cursor-pointer z-[1046]">
+                                <div class="mobile-subnav__close-btn absolute top-[24px] left-[8px] cursor-pointer z-[1046]">
                                     <!-- X ICON -->
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="3" stroke="#ffffff" class="size-8">
@@ -145,7 +145,7 @@
 
                             <div class="bg-white">
                                 <div
-                                    class="mobile__nav__drawer__subnav__back text-xl py-7 tracking-[1px] flex items-center justify-center relative ml-2 mr-4.5">
+                                    class="mobile-subnav__back-btn text-xl py-7 tracking-[1px] flex items-center justify-center relative ml-2 mr-4.5">
                                     <span class="block absolute left-1"><svg xmlns="http://www.w3.org/2000/svg"
                                             fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                                             class="size-6">
@@ -181,11 +181,11 @@
                     </div>
 
                 </li>
-                <li>
-                    <a class="text-xl py-7 block tracking-[1px]">Best Sellers</a>
+                <li class="mobile-menu-list-item">
+                    <a class="mobile-menu-list-item__link text-xl py-7 block tracking-[1px]">Best Sellers</a>
                 </li>
-                <li>
-                    <a class="text-xl py-7 block tracking-[1px]">About PAPATUI<sup>&trade;</sup></a>
+                <li class="mobile-menu-list-item">
+                    <a class="mobile-menu-list-item__link text-xl py-7 block tracking-[1px]">About PAPATUI<sup>&trade;</sup></a>
                 </li>
             </ul>
             <!-- END OF MOBILE MENU -->

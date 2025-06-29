@@ -87,6 +87,25 @@ $(document).ready(function () {
   });
 });
 
+// OPEN/CLOSE MEDIUM SUBNAV MENU
+$(document).ready(function () {
+  $(".medium-nav-list-item").hover(
+    function () {
+      $(this).find(".medium-subnav-container")
+        .stop(true, true)
+        .css("display", "block")
+        .animate({ opacity: 1 }, 150);
+    },
+    function () {
+      $(this).find(".medium-subnav-container")
+        .stop(true, true)
+        .animate({ opacity: 0 }, 125, function () {
+          $(this).css("display", "none");
+        });
+    }
+  );
+});
+
 
 
 

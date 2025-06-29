@@ -29,16 +29,18 @@
     <!-- END OF ANNOUNCEMENT BAR -->
 
     <!-- START OF HEADER -->
-    <div class="bg-[#d6d2c4]">
-        <div class="h-14 md:h-auto 2xl:h-[88px] relative">
+    <div class="bg-[#d6d2c4] relative">
+        <div class="relative h-14 md:h-auto md:pt-4 xl:pt-0 xl:h-[88px] ">
+            <!-- START OF LOGO -->
             <div class="flex items-center justify-center z-[3] h-full">
                 <!-- <h1 class="mx-auto text-center text-2xl md:text-3xl font-bold">PAPATUI</h1> -->
-                <img class="mx-auto h-9 w-[150px] object-contain" src="./assets/Papatui_Header_Logo.png" alt=""
-                    srcset="">
+                <img class="mx-auto h-9 w-[150px] object-contain md:h-13 md:w-full"
+                    src="./assets/Papatui_Header_Logo.png" alt="" srcset="">
             </div>
+            <!-- END OF LOGO -->
 
             <div id="mobile-nav-button_open"
-                class="absolute top-0 left-[18px] h-full flex items-center cursor-pointer z-[4]">
+                class="absolute top-0 left-[18px] h-full flex items-center cursor-pointer z-[4] md:hidden">
                 <!-- BARS ICON -->
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="size-6">
@@ -48,7 +50,17 @@
 
             </div>
 
-            <div class="absolute top-0 right-[18px] h-full flex items-center gap-3.5  z-[4]">
+
+
+            <div class="absolute top-0 right-[18px] h-full flex items-center gap-3.5  z-[4] xl:right-[30px] md:gap-8">
+                <div class="h-full flex items-center relative cursor-pointer">
+                    <!-- USER ICON -->
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-5">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                    </svg>
+                </div>
                 <div class="h-full flex items-center relative cursor-pointer">
                     <!-- CART ICON -->
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -75,6 +87,61 @@
             </div>
 
         </div>
+
+        <!-- START OF MD:NAV -->
+        <ul
+            class="hidden md:flex items-center justify-center px-[18px] pb-4 sm:mt-4 xl:px-[30px] xl:mt-0 min-[1440px]:justify-start min-[1440px]:absolute min-[1440px]:px-0 min-[1440px]:pb-0 min-[1440px]:top-1/2 min-[1440px]:left-0 min-[1440px]:-translate-y-1/2">
+            <li id="medium-nav-list-item" class="first:pl-0 medium-nav-list-item px-[18px]  tracking-[1px] text-sm">
+                <a class="uppercase h-8 flex items-center justify-center hover:text-[rgba(33,35,34,0.7)] relative after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-[2px] after:bg-[rgba(33,35,34,0.7)] after:transition-all after:duration-300 after:ease-in-out after:-translate-x-1/2 hover:after:w-full"
+                    href="#">Shop All</a>
+            </li>
+            <li id="medium-nav-list-item" class="first:pl-0  medium-nav-list-item px-[18px]  tracking-[1px] text-sm">
+                <a class="uppercase h-8 flex items-center justify-center hover:text-[rgba(33,35,34,0.7)] relative after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-[2px] after:bg-[rgba(33,35,34,0.7)] after:transition-all after:duration-300 after:ease-in-out after:-translate-x-1/2 hover:after:w-full"
+                    href="#">
+                    Shop catagories
+                    <!-- DOWN ARROW ICON -->
+                    <span class="block pl-1.5">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-3.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                        </svg>
+
+                    </span>
+                </a>
+                <ul id="medium-subnav-container"
+                    class="medium-subnav-container hidden opacity-0 transition-opacity duration-100 ease-in-out absolute bg-[#d6d2c4] px-[18px] py-[12px] min-w-[160px] max-w-[270px] w-max shadow-[0_8px_24px_rgba(33,35,34,0.08)]">
+                    <li class="text-[rgba(33,35,34,0.7)] leading-[1.5] w-full  text-xs ">
+                        <a class="block w-full px-[0.4em] py-[0.5em] rounded hover:bg-[rgba(33,35,34,0.1)]" href="">Body
+                            + Hair</a>
+                    </li>
+                    <li class="text-[rgba(33,35,34,0.7)] leading-[1.5] w-full  text-xs ">
+                        <a class="block w-full px-[0.4em] py-[0.5em] rounded hover:bg-[rgba(33,35,34,0.1)]"
+                            href="">Face</a>
+                    </li>
+                    <li class="text-[rgba(33,35,34,0.7)] leading-[1.5] w-full  text-xs ">
+                        <a class="block w-full px-[0.4em] py-[0.5em] rounded hover:bg-[rgba(33,35,34,0.1)]"
+                            href="">Tattoo</a>
+                    </li>
+                    <li class="text-[rgba(33,35,34,0.7)] leading-[1.5] w-full  text-xs ">
+                        <a class="block w-full px-[0.4em] py-[0.5em] rounded hover:bg-[rgba(33,35,34,0.1)]"
+                            href="">Antiperspirant + Deodorant</a>
+                    </li>
+                    <li class="text-[rgba(33,35,34,0.7)] leading-[1.5] w-full  text-xs ">
+                        <a class="block w-full px-[0.4em] py-[0.5em] rounded hover:bg-[rgba(33,35,34,0.1)]"
+                            href="">Bundles</a>
+                    </li>
+                </ul>
+            </li>
+            <li id="medium-nav-list-item" class="first:pl-0 medium-nav-list-item px-[18px] tracking-[1px] text-sm">
+                <a class="uppercase h-8 flex items-center justify-center hover:text-[rgba(33,35,34,0.7)] relative after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-[2px] after:bg-[rgba(33,35,34,0.7)] after:transition-all after:duration-300 after:ease-in-out after:-translate-x-1/2 hover:after:w-full"
+                    href="#">Best sellers</a>
+            </li>
+            <li id="medium-nav-list-item" class="first:pl-0 medium-nav-list-item px-[18px]  tracking-[1px] text-sm">
+                <a class="uppercase h-8 flex items-center justify-center hover:text-[rgba(33,35,34,0.7)] relative after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-[2px] after:bg-[rgba(33,35,34,0.7)] after:transition-all after:duration-300 after:ease-in-out after:-translate-x-1/2 hover:after:w-full"
+                    href="#">About</a>
+            </li>
+        </ul>
+        <!-- END OF MD:NAV -->
 
 
     </div>
@@ -116,7 +183,8 @@
                     <a class="text-xl py-7 block tracking-[1px]">Shop All</a>
                 </li>
                 <li class="mobile-menu-list-item">
-                    <a class="mobile-menu-list-item__link text-xl py-7 tracking-[1px] flex items-center justify-between">
+                    <a
+                        class="mobile-menu-list-item__link text-xl py-7 tracking-[1px] flex items-center justify-between">
                         <span class="block">Shop by Category</span>
                         <!-- RIGHT ARROW ICON -->
                         <span class="block"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -132,7 +200,8 @@
                                 <img class="h-60 w-full object-cover"
                                     src="./assets/mobile-secondary-subnav-banner_completefacecare_scent_uncented__01.png"
                                     alt="">
-                                <div class="mobile-subnav__close-btn absolute top-[24px] left-[8px] cursor-pointer z-[1046]">
+                                <div
+                                    class="mobile-subnav__close-btn absolute top-[24px] left-[8px] cursor-pointer z-[1046]">
                                     <!-- X ICON -->
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="3" stroke="#ffffff" class="size-8">
@@ -185,7 +254,8 @@
                     <a class="mobile-menu-list-item__link text-xl py-7 block tracking-[1px]">Best Sellers</a>
                 </li>
                 <li class="mobile-menu-list-item">
-                    <a class="mobile-menu-list-item__link text-xl py-7 block tracking-[1px]">About PAPATUI<sup>&trade;</sup></a>
+                    <a class="mobile-menu-list-item__link text-xl py-7 block tracking-[1px]">About
+                        PAPATUI<sup>&trade;</sup></a>
                 </li>
             </ul>
             <!-- END OF MOBILE MENU -->

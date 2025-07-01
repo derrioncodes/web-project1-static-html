@@ -34,8 +34,11 @@
             <!-- START OF LOGO -->
             <div class="flex items-center justify-center z-[3] h-full">
                 <!-- <h1 class="mx-auto text-center text-2xl md:text-3xl font-bold">PAPATUI</h1> -->
-                <img class="mx-auto h-9 w-[150px] object-contain md:h-13 md:w-full"
-                    src="./assets/Papatui_Header_Logo.png" alt="" srcset="">
+                <a class="block" href="#">
+                    <img class="mx-auto h-9 w-[150px] object-contain md:h-13 md:w-full"
+                        src="./assets/Papatui_Header_Logo.png" alt="" srcset="">
+                </a>
+
             </div>
             <!-- END OF LOGO -->
 
@@ -52,16 +55,18 @@
 
 
 
-            <div class="absolute top-0 right-[18px] h-full flex items-center gap-3.5  z-[4] xl:right-[30px] md:gap-8">
-                <div class="h-full flex items-center relative cursor-pointer">
+            <div class="absolute top-0 right-[18px] h-full flex items-center gap-3  z-[4] xl:right-[30px] md:gap-8">
+                <a href="#" class="hidden items-center relative cursor-pointer md:flex">
+
                     <!-- USER ICON -->
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="size-5">
                         <path stroke-linecap="round" stroke-linejoin="round"
                             d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
                     </svg>
-                </div>
-                <div class="h-full flex items-center relative cursor-pointer">
+
+                </a>
+                <div class=" flex items-center relative cursor-pointer">
                     <!-- CART ICON -->
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="size-5">
@@ -75,7 +80,7 @@
                         </span>
                     </div>
                 </div>
-                <div class="nav-search-button h-full flex items-center cursor-pointer">
+                <div class="nav-search-button  flex items-center cursor-pointer">
                     <!-- SEARCH ICON -->
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="size-5">
@@ -274,8 +279,10 @@
     <!-- END OF MOBILE NAV -->
 
     <!-- START OF SEARCH SECTION -->
-    <div class="search-overlay absolute top-0 left-0 w-full h-full z-[1042] bg-[#0b0b0b66] opacity-0 invisible transition-opacity duration-500 ease-in-out">
-        <div class="search-panel absolute top-0 left-0 w-full h-full z-[1045] overflow-hidden overflow-y-auto bg-white transition-[top] duration-500 ease-in-out  sm:max-h-[600px]">
+    <div
+        class="search-overlay absolute top-0 left-0 w-full h-full z-[1042] bg-[#0b0b0b66] opacity-0 invisible transition-opacity duration-500 ease-in-out">
+        <div
+            class="search-panel absolute top-0 left-0 w-full h-full z-[1045] overflow-hidden overflow-y-auto bg-white transition-[top] duration-500 ease-in-out  sm:max-h-[600px]">
             <div class="border-b border-b-[rgba(33,33,33,0.2)] px-[18px] ">
                 <form class="flex justify-between items-center gap-5 h-[72px] max-w-screen-2xl mx-auto">
                     <button>
@@ -290,7 +297,7 @@
                     <input
                         class="text-base tracking-[1px] block w-full outline-0 placeholder:text-[rgba(33,33,33,0.5)] placeholder:tracking-[1px]"
                         type="text" placeholder="Search our store..." />
-                    <div class="search-close-button">
+                    <div class="search-close-button cursor-pointer">
                         <!-- X ICON -->
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" class="size-8">

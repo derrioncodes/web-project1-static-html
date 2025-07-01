@@ -75,7 +75,7 @@
                         </span>
                     </div>
                 </div>
-                <div class="h-full flex items-center cursor-pointer">
+                <div class="nav-search-button h-full flex items-center cursor-pointer">
                     <!-- SEARCH ICON -->
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="size-5">
@@ -272,6 +272,74 @@
         </div>
     </div>
     <!-- END OF MOBILE NAV -->
+
+    <!-- START OF SEARCH SECTION -->
+    <div class="search-overlay absolute top-0 left-0 w-full h-full z-[1042] bg-[#0b0b0b66] opacity-0 invisible transition-opacity duration-500 ease-in-out">
+        <div class="search-panel absolute top-0 left-0 w-full h-full z-[1045] overflow-hidden overflow-y-auto bg-white transition-[top] duration-500 ease-in-out  sm:max-h-[600px]">
+            <div class="border-b border-b-[rgba(33,33,33,0.2)] px-[18px] ">
+                <form class="flex justify-between items-center gap-5 h-[72px] max-w-screen-2xl mx-auto">
+                    <button>
+                        <!-- SEARCH ICON -->
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-5">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                        </svg>
+
+                    </button>
+                    <input
+                        class="text-base tracking-[1px] block w-full outline-0 placeholder:text-[rgba(33,33,33,0.5)] placeholder:tracking-[1px]"
+                        type="text" placeholder="Search our store..." />
+                    <div class="search-close-button">
+                        <!-- X ICON -->
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-8">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                        </svg>
+                    </div>
+                </form>
+            </div>
+
+            <div
+                class="py-[30px] px-[18px] max-w-screen-2xl mx-auto grid grid-cols-1 gap-[30px] sm:grid-cols-[1fr_1fr_2fr]">
+                <div class="">
+                    <h4 class="text-sm uppercase mb-1.5 ml-1.5 tracking-[1px] leading-loose">Recent searches</h4>
+                    <ul>
+                        <li class="text-sm tracking-[1px]">
+                            <a class="py-[3px] px-1.5 block w-full rounded hover:bg-[rgba(33,35,34,0.1)] leading-normal"
+                                href="">Shop All</a>
+                        </li>
+
+
+                    </ul>
+                </div>
+                <div class="">
+                    <h4 class="text-sm uppercase mb-1.5 ml-1.5 tracking-[1px] leading-loose">Main Menu</h4>
+                    <ul>
+                        <li class="text-sm tracking-[1px]">
+                            <a class="py-[3px] px-1.5 block w-full rounded hover:bg-[rgba(33,35,34,0.1)] leading-normal"
+                                href="">Shop All</a>
+                        </li>
+                        <li class="text-sm tracking-[1px]">
+                            <a class="py-[3px] px-1.5 block w-full rounded hover:bg-[rgba(33,35,34,0.1)] leading-normal"
+                                href="">Shop by Category</a>
+                        </li>
+                        <li class="text-sm tracking-[1px]">
+                            <a class="py-[3px] px-1.5 block w-full rounded hover:bg-[rgba(33,35,34,0.1)] leading-normal"
+                                href="">Bestsellers</a>
+                        </li>
+                        <li class="text-sm tracking-[1px]">
+                            <a class="py-[3px] px-1.5 block w-full rounded hover:bg-[rgba(33,35,34,0.1)] leading-normal"
+                                href="">About</a>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- START OF SEARCH SECTION -->
 
     <script src="/js/app.js"></script>
 </body>

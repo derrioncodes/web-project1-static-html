@@ -106,6 +106,42 @@ $(document).ready(function () {
   );
 });
 
+$(document).ready(function () {
+  // Open search panel
+  $('.nav-search-button').on('click', function () {
+    $('.search-overlay')
+      .removeClass('opacity-0 invisible')
+      .addClass('opacity-100 visible');
+
+    $('.search-panel')
+      .removeClass('top-[-100%]')
+      .addClass('top-0');
+
+    $('body').addClass('overflow-hidden');
+  });
+
+  // Close search panel
+  $('.search-close-button').on('click', function () {
+    // Slide search panel up
+    $('.search-panel')
+      .removeClass('top-0')
+      .addClass('top-[-100%]');
+
+    // Fade out background
+    $('.search-overlay')
+      .removeClass('opacity-100 visible')
+      .addClass('opacity-0');
+
+    // Fully hide after transition
+    setTimeout(() => {
+      $('.search-overlay').addClass('invisible');
+      $('body').removeClass('overflow-hidden');
+    }, 500); // Match your Tailwind `duration-500`
+  });
+});
+
+
+
 
 
 

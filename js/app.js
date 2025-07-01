@@ -1,3 +1,26 @@
+// CLOSE ANNOUNCEMENT BANNER BUTTON
+// $(document).ready(function () {
+
+
+//   $(".close-announcement-banner").click(function () {
+//     $(".announcement__banner").css("display", "none");
+//   });
+// });
+
+$(document).ready(function () {
+  // Check sessionStorage to see if banner was already closed
+  if (sessionStorage.getItem("announcementBannerClosed") === "true") {
+    $(".announcement__banner").addClass("hidden");
+  }
+
+  // Close button click
+  $(".close-announcement-banner").on("click", function () {
+    $(".announcement__banner").addClass("hidden");
+    sessionStorage.setItem("announcementBannerClosed", "true");
+  });
+});
+
+
 
 // OPEN/CLOSE MOBILE NAV
 $(document).ready(function () {
@@ -106,6 +129,7 @@ $(document).ready(function () {
   );
 });
 
+// OPEN/CLOSE SEARCH PANEL
 $(document).ready(function () {
   // Open search panel
   $('.nav-search-button').on('click', function () {

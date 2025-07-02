@@ -933,9 +933,6 @@
     color: #212322;
     font-family: var(--font-primary);
   }
-  code, pre {
-    font-family: var(--font-secondary);
-  }
 }
 @layer utilities {
   .font-secondary {

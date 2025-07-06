@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- FONT FAMILY - ROBOTO -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet" />
+
+    <!-- FONT FAMILY - ROBOTO MONO -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet" />
+
+    <title>Vanilla JS Slider</title>
+
+    <style>
+        .slider-wrapper {
+            display: flex;
+            transition: transform 0.4s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+        }
+
+        .arrow-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .slider-container {
+            overflow: hidden;
+            position: relative;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+
+        .arrow-left {
+            left: 0rem;
+        }
+
+        .arrow-right {
+            right: 0rem;
+        }
+
+        @media (max-width: 480px) {
+            .slider-container {
+                width: 85%;
+                padding-top: 4px;
+                padding-bottom: 4px;
+            }
+        }
+
+        @media (min-width: 481px) and (max-width: 768px) {
+            .slider-container {
+                width: 80%;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .slider-container {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body class="font-['Roboto',sans-serif]">
+
+    <!-- START OF ANNOUNCEMENT BAR -->
+    <div
+        class="announcement__banner bg-[#d6d2c4] border-b border-[rgba(33,35,34,0.2)] text-center flex items-center py-2">
+        <div class="relative w-full max-w-[700px] mx-auto px-0">
+            <!-- Arrow Left (OUTSIDE slider container) -->
+            <button class="arrow-btn arrow-left absolute top-1/2 left-2 -translate-y-1/2 z-10 pl-2" id="prevBtn">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-5 h-5 md:w-6 md:h-6 text-[#212322]">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                </svg>
+            </button>
+
+            <!-- Arrow Right -->
+            <button class="arrow-btn arrow-right absolute top-1/2 right-2 -translate-y-1/2 z-10" id="nextBtn">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-5 h-5 md:w-6 md:h-6 text-[#212322]">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                </svg>
+            </button>
+
+            <!-- Slider Container -->
+            <div class="slider-container w-full max-w-2xl mx-auto overflow-hidden px-2 md:px-0">
+                <div class="slider-wrapper flex transition-transform duration-300 ease-in-out" id="sliderWrapper">
+                    <div class="slide flex items-center justify-center  min-w-full px-4 md:px-0">
+                        <p class="max-w-lg px-4 text-[11px] md:text-xs uppercase">FREE SHIPPING ON ORDERS $40+
+                            <span class="ml-0.5">
+                                <a class="underline text-[#212322] opacity-70 hover:opacity-100 transition-opacity duration-200"
+                                    href="#">
+                                    SHOP NOW
+                                </a>
+                            </span>
+                        </p>
+                    </div>
+                    <div class="slide flex items-center justify-center min-w-full">
+                        <p class="max-w-2xl px-4 text-[11px] md:text-xs uppercase">FREE Bar Soap with any Deodorant or
+                            Antiperspirant Order
+                            <span class="ml-0.5">
+                                <a class="underline text-[#212322] opacity-70 hover:opacity-100 transition-opacity duration-200"
+                                    href="#">
+                                    SHOP NOW
+                                </a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="close-announcement-banner pl-1 px-2 py-3 cursor-pointer">
+            <!-- X ICON -->
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="size-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+            </svg>
+        </div>
+    </div>
+    <!-- END OF ANNOUNCEMENT BAR -->
+
+    <!-- Vanilla JS Slider Script -->
+    <script>
+        const sliderWrapper = document.getElementById("sliderWrapper");
+        const prevBtn = document.getElementById("prevBtn");
+        const nextBtn = document.getElementById("nextBtn");
+
+        const totalSlides = sliderWrapper.children.length;
+        let currentIndex = 0;
+
+        function updateSlider() {
+            sliderWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        prevBtn.addEventListener("click", () => {
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            updateSlider();
+        });
+
+        nextBtn.addEventListener("click", () => {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateSlider();
+        });
+
+        
+        setInterval(() => {
+          nextBtn.click();
+        }, 4000);
+    </script>
+
+</body>
+
+</html>

@@ -20,6 +20,9 @@ $(document).ready(function () {
   });
 });
 
+// SWIPER JS
+
+
 
 
 // OPEN/CLOSE MOBILE NAV

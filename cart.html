@@ -366,6 +366,116 @@
         </div>
     </div>
 
+    <!-- Allow merchant to change font  -->
+
+    <!-- START OF ANNOUNCEMENT BAR -->
+    <div
+        class="announcement__banner bg-[#3e4827] border-b border-[rgba(33,35,34,0.2)] text-center flex items-center mb-10">
+        <p class="mx-auto px-6 py-3 text-[11px] font-secondary text-white md:text-sm">Receive FREE SHIPPING when you
+            spend $40+</p>
+        <div class="close-announcement-banner px-2 py-3 cursor-pointer">
+            <!-- X ICON -->
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="size-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+            </svg>
+        </div>
+    </div>
+    <!-- END OF ANNOUNCEMENT BAR -->
+
+    <div class="cart-container max-w-7xl mx-auto px-[18px] mb-10">
+        <div class="title flex items-start my-[30px] max-w-[600px] lg:max-w-full mx-auto">
+            <h1
+                class="relative text-[#3e4827] pb-4 mb-0 uppercase font-normal text-[18px] md:text-[24px] leading-[24px] after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-[36px] after:h-[3px] after:bg-[#db864e]">
+                Shopping Cart <span class="ml-2 text-[16px] text-[#2123228C] font-secondary normal-case">(1 item)</span>
+            </h1>
+        </div>
+        <div class="cart max-w-[600px] mx-auto lg:max-w-full lg:flex lg:gap-12">
+            <div class="cart-items-container w-full lg:w-[55%]
+            ">
+                <!-- Create empty cart -->
+                <div class="cart-items">
+                    <div class="cart-item flex justify-between gap-5 mb-[30px]">
+                        <div class="flex gap-5">
+                            <div>
+                                <a href="#">
+                                    <img class="w-[clamp(80px,10vw,120px)] object-contain transition-opacity duration-200 hover:opacity-70"
+                                    src="./assets/TattooCareBundle_scent_uncented__01.png" alt="">
+                                </a>
+                                
+                            </div>
+                            <div class="product-details">
+                                <div class="product-name  mb-3.5">
+                                    <a href="#" class="font-secondary text-base text-[#3e4827] hover:text-[rgba(62,72,39,0.7)] transition-colors duration-200 font-normal">Awakening Eye Gel</a>
+
+                                </div>
+                                <div class="item__quantity flex flex-wrap gap-[12px] items-center justify-start w-full"
+                                    style="grid-area: 2 / 2;">
+                                    <div class="item__quantity__input flex border border-[rgba(33,35,34,0.2)]">
+                                        <button
+                                            class="input__minus text-[0.865rem] w-[1.9rem] h-[1.9rem] relative outline-offset-[-3px] cursor-pointer bg-transparent p-0 text-center border-0 m-0 inline-block leading-none touch-manipulation">
+                                            -
+                                        </button>
+                                        <input type="number" value="1" min="0" autocomplete="off" step="1"
+                                            name="item-quantity"
+                                            class="outline-offset-[-3px] p-0 rounded-none bg-transparent cursor-text border-l border-r border-t-0 border-b-0 border-[rgba(33,35,34,0.2)] text-center m-0 relative inline-block leading-none touch-manipulation align-middle w-[2.375rem] h-[1.9rem] text-[#212121] text-[0.865rem] appearance-none" />
+                                        <button
+                                            class="input__plus text-[0.865rem] w-[1.9rem] h-[1.9rem] relative outline-offset-[-3px] cursor-pointer bg-transparent p-0 text-center border-0 m-0 inline-block leading-none touch-manipulation">
+                                            +
+                                        </button>
+                                    </div>
+                                    <button class="cart-item__remove block cursor-pointer">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-5">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
+                                        </svg>
+
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="product-price font-secondary">$10.00</div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div class="w-full lg:w-[45%]">
+
+                <div class="order-summary w-full border border-[rgba(33,35,34,0.2)] py-3 px-4.5">
+                    <div class="font-secondary text-[22px] leading-[60px] border-b border-[rgba(33,35,34,0.2)]">Order
+                        summary</div>
+                    <div class="order-details mt-3 flex justify-between mb-3">
+                        <div class="font-secondary text-[18px]">Subtotal</div>
+                        <div class="font-secondary text-[18px]">$10.00</div>
+                    </div>
+                    <p class="font-secondary text-xs text-[#212322B3] mb-3">Taxes and shipping calculated at checkout
+                    </p>
+                    <button
+                        class="py-[9px] px-[18px] mb-3 text-center w-full bg-[#d6d2c4] text-[#3e4827] uppercase text-xs leading-[30px] tracking-[1px] transition-all duration-200 ease-in-out hover:bg-[#ccc7b5] cursor-pointer">Check
+                        out</button>
+                </div>
+
+                <a href="#" class="flex items-center gap-2 mt-6 w-fit hover:text-[#3e4827]">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                        </svg>
+                    </div>
+                    <div class="text-xs font-secondary uppercase tracking-[1px]">
+                        Continue shopping
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+
     <footer class="bg-[#3e4827] mt-">
         <div class="footer-container pt-[60px] pb-[0px] px-[0px] lg:flex lg:pb-[30px] lg:px-[18px]">
             <div class="footer_logo w-full mb-[30px] pl-[30px] md:w-1/2 lg:w-1/4">
@@ -378,7 +488,8 @@
                         <a href="#" class="footer-nav__link text-[#fffffccf] hover:text-white">About Us</a>
                     </li>
                     <li class="footer-nav__item mb-[10px] text-[14px] font-secondary ">
-                        <a href="#" class="footer-nav__link text-[#fffffccf] hover:text-white">PAPATUI<sup>&trade;</sup> Cares</a>
+                        <a href="#" class="footer-nav__link text-[#fffffccf] hover:text-white">PAPATUI<sup>&trade;</sup>
+                            Cares</a>
                     </li>
                     <li class="footer-nav__item mb-[10px] text-[14px] font-secondary ">
                         <a href="#" class="footer-nav__link text-[#fffffccf] hover:text-white">Store Locator</a>
@@ -389,7 +500,8 @@
                 </ul>
             </div>
             <div class="footer-nav w-full mb-[30px] pl-[30px] text-[#f3f2ed] md:w-1/2 lg:w-1/4">
-                <h5 class="footer-nav__title uppercase mb-[12px] text-[15px] leading-[1.9]  font-semibold">SUPPORT & CONTACT</h5>
+                <h5 class="footer-nav__title uppercase mb-[12px] text-[15px] leading-[1.9]  font-semibold">SUPPORT &
+                    CONTACT</h5>
                 <ul class="footer-nav__items mb-4">
                     <li class="footer-nav__item mb-[10px] text-[14px] font-secondary ">
                         <a href="#" class="footer-nav__link text-[#fffffccf] hover:text-white">Contact Us</a>
@@ -401,7 +513,8 @@
                         <a href="#" class="footer-nav__link text-[#fffffccf] hover:text-white">Terms of Use</a>
                     </li>
                     <li class="footer-nav__item mb-[10px] text-[14px]  font-secondary ">
-                        <a href="#" class="footer-nav__link text-[#fffffccf] hover:text-white">Accessbility Statement</a>
+                        <a href="#" class="footer-nav__link text-[#fffffccf] hover:text-white">Accessbility
+                            Statement</a>
                     </li>
                 </ul>
             </div>
@@ -410,7 +523,7 @@
                 <ul class="footer-nav__items social__items mb-4 flex gap-[10px] -ml-[12px]">
                     <li class="footer-nav__item social__item w-[40px] h-[40px]">
                         <a class="footer-nav__link social-icon w-[20px] h-[20px] mx-auto block" href="#">
-                            <img src="/assets/papatui_footer_white_instagram.png" alt="" srcset=""/>
+                            <img src="/assets/papatui_footer_white_instagram.png" alt="" srcset="" />
                         </a>
                     </li>
                     <li class="footer-nav__item social__item w-[40px] h-[40px]">
@@ -418,12 +531,15 @@
                             <img src="/assets/papatui_footer_white_tiktok.png" alt="" />
                         </a>
                     </li>
-                    
+
                 </ul>
             </div>
         </div>
-        <div class="footer__bottom border-t border-t-[rgba(255,255,255,0.2)] py-[12px] px-[30px] min-h-[66px] flex justify-center items-center lg:justify-end">
-            <div class="footer-copyright__text text-[0.8rem] text-[#fffffccf]">&copy; <script>document.write(new Date().getFullYear());</script>, PAPATUI</div>
+        <div
+            class="footer__bottom border-t border-t-[rgba(255,255,255,0.2)] py-[12px] px-[30px] min-h-[66px] flex justify-center items-center lg:justify-end">
+            <div class="footer-copyright__text text-[0.8rem] text-[#fffffccf]">&copy;
+                <script>document.write(new Date().getFullYear());</script>, PAPATUI
+            </div>
         </div>
 
     </footer>

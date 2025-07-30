@@ -1386,60 +1386,6 @@
     <script src="/js/app.js"></script>
 
     <!-- Inline scripts for initialization -->
-    <!-- <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const glideElement = document.querySelector('.glide');
-            const slides = glideElement.querySelectorAll('.glide__slide');
-            const bulletsContainer = glideElement.querySelector('.glide__bullets');
-
-            const perView = 4; // Set to match your Glide config
-            const totalPages = Math.ceil(slides.length / perView);
-
-            // Generate bullets based on number of pages (not slides)
-            for (let i = 0; i < totalPages; i++) {
-                const bullet = document.createElement('button');
-                bullet.className = 'glide__bullet';
-                bullet.setAttribute('data-glide-dir', `=${i * perView}`);
-                if (i === 0) bullet.classList.add('active'); // ✅ set first bullet active
-                bulletsContainer.appendChild(bullet);
-            }
-
-            const glide = new Glide(glideElement, {
-                type: 'carousel',
-                perView: perView,
-                gap: 20,
-                breakpoints: {
-                    1000: { perView: 3 },
-                    768: { perView: 1 }
-                }
-            });
-
-            glide.mount();
-
-            
-
-            // ✅ Update bullets on slide change
-            glide.on('run', () => {
-                const bullets = document.querySelectorAll('.glide__bullet');
-                const index = glide.index;
-                const perView = glide.settings.perView;
-                const activeBulletIndex = Math.floor(index / perView);
-
-                // Update bullets
-                bullets.forEach((bullet, i) => {
-                    bullet.classList.toggle('active', i === activeBulletIndex);
-                });
-
-                // Update slide numbers
-                if (current && total) {
-                    const totalSlides = glideElement.querySelectorAll('.glide__slide').length;
-
-                    current.textContent = String(index + 1).padStart(2, '0');
-                    total.textContent = String(totalSlides).padStart(2, '0');
-                }
-            });
-        });
-    </script> -->
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -1463,7 +1409,7 @@
                 perView: perView,
                 gap: 4,
                 breakpoints: {
-                    1000: { perView: 3 },
+                    1024: { perView: 3 },
                     768: { perView: 1 }
                 }
             });

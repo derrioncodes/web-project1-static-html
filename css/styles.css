@@ -1652,33 +1652,6 @@
       font-size: 24px;
     }
   }
-  .md\:opacity-0 {
-    @media (width >= 48rem) {
-      opacity: 0%;
-    }
-  }
-  .md\:transition-opacity {
-    @media (width >= 48rem) {
-      transition-property: opacity;
-      transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-      transition-duration: var(--tw-duration, var(--default-transition-duration));
-    }
-  }
-  .md\:duration-300 {
-    @media (width >= 48rem) {
-      --tw-duration: 300ms;
-      transition-duration: 300ms;
-    }
-  }
-  .md\:group-hover\:opacity-100 {
-    @media (width >= 48rem) {
-      &:is(:where(.group):hover *) {
-        @media (hover: hover) {
-          opacity: 100%;
-        }
-      }
-    }
-  }
   .lg\:absolute {
     @media (width >= 64rem) {
       position: absolute;

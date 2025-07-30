@@ -27,9 +27,39 @@
     background-color: #ffffff;
     cursor: pointer;
     opacity: 0.3;
-    
+
 }
 
 .carousel-dots button.active {
     opacity: 1;
+}
+
+.collection_wrapper_slide-numbers {
+    display: block !important;
+}
+
+@media (min-width:768px) {
+    .collection_wrapper_slide-numbers {
+        display: none !important;
+    }
+}
+
+.glide__bullets {
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.glide__bullet {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ccc;
+    border: none;
+    cursor: pointer;
+}
+
+.glide__bullet:hover,
+.glide__bullet.active {
+    background-color: #333;
 }

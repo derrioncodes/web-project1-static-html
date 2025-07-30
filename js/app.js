@@ -168,35 +168,6 @@ $(document).ready(function () {
 });
 
 // HERO SLIDER
-// document.addEventListener("DOMContentLoaded", function () {
-//   const wrapper = document.querySelector(".hero-carousel-wrapper");
-//   const slides = wrapper.querySelectorAll(".slide");
-//   const dotContainer = document.querySelector(".carousel-dots");
-
-//   let currentSlide = 0;
-
-//   function showSlide(index) {
-//     slides.forEach((slide, i) => {
-//       slide.classList.toggle("active", i === index);
-//     });
-
-//     dotContainer.querySelectorAll("button").forEach((dot, i) => {
-//       dot.classList.toggle("active", i === index);
-//     });
-
-//     currentSlide = index;
-//   }
-
-//   slides.forEach((_, i) => {
-//     const dot = document.createElement("button");
-//     dot.addEventListener("click", () => showSlide(i));
-//     dotContainer.appendChild(dot);
-//   });
-
-//   showSlide(currentSlide);
-// });
-
-
 document.addEventListener("DOMContentLoaded", function () {
   const wrapper = document.querySelector(".hero-carousel-wrapper");
   const slides = wrapper.querySelectorAll(".slide");
@@ -250,6 +221,8 @@ document.addEventListener("DOMContentLoaded", function () {
   showSlide(currentSlide);
   startAutoplay();
 });
+
+// COLLECTION GLIDE JS
 
 
 

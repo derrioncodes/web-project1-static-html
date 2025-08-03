@@ -1,0 +1,305 @@
+// COLLECTION SLIDER
+<section class="px-[18px] mb-6 max-w-[1400px] mx-auto lg:mb-16 lg:px-[30px]">
+  <div
+    class="collection_title ml-2 text-[20px] leading-[1.6] mb-5 uppercase w-fit border-b-[2px] border-[#db864e] font-secondary"
+  >
+    Bestsellers
+  </div>
+  <div class="glide relative group">
+    <div class="glide__track" data-glide-el="track">
+      <ul class="glide__slides">
+        <li class="glide__slide">
+          <div class="product-card px-2 mb-[30px] md:mb-9 relative">
+            <div class="product-card__top">
+              <a class="block" href="#">
+                <ul
+                  class="product-card__label absolute flex flex-col z-[3] top-[15px] right-0 mb-0 text-right items-end"
+                >
+                  <li class="product-card__label-li w-fit mb-1 bg-[#e5e5e5] px-[10px] py-1">
+                    <p
+                      class="product-card__label-text text-black tracking-[1px] uppercase text-[10px]"
+                    >
+                      Best Seller
+                    </p>
+                  </li>
+                </ul>
+                <div class="product-card__image">
+                  <img
+                    class="w-full h-full object-contain"
+                    src="/assets/papa_facecare_eyepatch__01_896295c6-22d6-4781-8c70-48a1f856e5be.png"
+                    alt=""
+                  >
+                </div>
+              </a>
+              <a
+                href="#"
+                class="product-cart__button block w-full border border-[#212322] opacity-60 mt-3 text-center m-0 cursor-pointer tracking-[1px] uppercase leading-[30px] py-[9px] px-[30px] text-[13px]"
+              >
+                Sold out
+              </a>
+            </div>
+
+            <div class="product-card__bottom mt-3">
+              <a class="block hover:opacity-70 transition-opacity duration-200 ease-in-out" href="#">
+                <p
+                  class="product__micro-copy font-secondary tracking-[1px] leading-[1.3] text-[rgba(33,35,34,0.55)] mb-[6px] text-[0.9rem]"
+                >
+                  Unscented
+                </p>
+                <h3 class="product__title leading-[1.3] text-[16px] tracking-[1px] font-secondary">
+                  Complete Face Care Bundle
+                </h3>
+                <p class="product__price mt-1.5 font-bold tracking-[1px] font-secondary">$53.00</p>
+              </a>
+            </div>
+          </div>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="glide__arrows hidden md:flex justify-between items-center mt-4" data-glide-el="controls">
+      <button
+        class="glide__arrow glide__arrow--left bg-white shadow-md w-[48px] h-[48px] flex items-center justify-center absolute top-33 -left-4 cursor-pointer pointer-events-none group-hover:pointer-events-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        data-glide-dir="<"
+      >
+        <span class="block">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-6"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+          </svg>
+        </span>
+      </button>
+      <button
+        class="glide__arrow glide__arrow--right bg-white shadow-md w-[48px] h-[48px] flex items-center justify-center absolute top-33 -right-4 cursor-pointer pointer-events-none group-hover:pointer-events-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        data-glide-dir=">"
+      >
+        <!-- RIGHT ARROW ICON -->
+        <span class="block">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-6"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+          </svg>
+        </span>
+      </button>
+    </div>
+    <div class="glide__bullets hidden md:flex" data-glide-el="controls[nav]">
+      <!-- Will auto-generate based on number of slides if you use JS -->
+    </div>
+    <div class="collection_wrapper_slide-numbers flex md:hidden justify-center gap-1 mt-4 text-center">
+      <span class="slides-number-active">01</span> / <span class="total"></span>
+    </div>
+  </div>
+</section>
+
+<script>
+  (() => {
+    document.addEventListener('DOMContentLoaded', () => {
+      const glideElement = document.querySelector('.glide');
+      if (!glideElement) return;
+
+      const slides = glideElement.querySelectorAll('.glide__slide');
+      const bulletsContainer = glideElement.querySelector('.glide__bullets');
+
+      const perView = 4;
+      const totalPages = Math.ceil(slides.length / perView);
+
+      for (let i = 0; i < totalPages; i++) {
+        const bullet = document.createElement('button');
+        bullet.className = 'glide__bullet';
+        bullet.setAttribute('data-glide-dir', `=${i * perView}`);
+        if (i === 0) bullet.classList.add('active');
+        bulletsContainer?.appendChild(bullet);
+      }
+
+      const glide = new Glide(glideElement, {
+        type: 'carousel',
+        perView: perView,
+        gap: 4,
+        breakpoints: {
+          1024: { perView: 3 },
+          768: { perView: 1 },
+        },
+      });
+
+      const updateSlideNumbers = () => {
+        const current = document.querySelector('.slides-number-active');
+        const total = document.querySelector('.total');
+        const totalSlides = glideElement.querySelectorAll('.glide__slide:not(.glide__slide--clone)').length;
+
+        if (current && total) {
+          current.textContent = String(glide.index + 1).padStart(2, '0');
+          total.textContent = String(totalSlides).padStart(2, '0');
+        }
+      };
+
+      glide.mount();
+      updateSlideNumbers();
+
+      glide.on('run', () => {
+        const bullets = document.querySelectorAll('.glide__bullet');
+        const index = glide.index;
+        const activeBulletIndex = Math.floor(index / glide.settings.perView);
+
+        bullets.forEach((bullet, i) => {
+          bullet.classList.toggle('active', i === activeBulletIndex);
+        });
+
+        updateSlideNumbers();
+      });
+    });
+  })();
+</script>
+
+
+
+----------------
+// PRODUCT SNIPPET
+<div class="product-card px-2 mb-[30px] md:mb-9 relative">
+  <div class="product-card__top">
+    <a class="block" href="{{ product.url }}">
+      {% if product.tags contains 'best-seller' %}
+        <ul
+          class="product-card__label absolute flex flex-col z-[3] top-[15px] right-0 mb-0 text-right items-end"
+        >
+          <li class="product-card__label-li w-fit mb-1 bg-[#e5e5e5] px-[10px] py-1">
+            <p class="product-card__label-text text-black tracking-[1px] uppercase text-[10px]">Best Seller</p>
+          </li>
+        </ul>
+      {% endif %}
+      {% if product.images.size > 0 %}
+        <div class="product-card__image relative group w-full overflow-hidden">
+          <!-- First Image -->
+          <img
+            class="w-full h-full object-contain transition-opacity duration-300 ease-in-out group-hover:opacity-0"
+            src="{{ product.images[0] | image_url }}"
+            alt="{{ product.images[0].alt }}"
+          >
+
+          {% if product.images.size > 1 %}
+            <!-- Second Image (shown on hover) -->
+            <img
+              class="w-full h-full object-contain absolute top-0 left-0 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100"
+              src="{{ product.images[1] | image_url }}"
+              alt="{{ product.images[1].alt }}"
+            >
+          {% endif %}
+        </div>
+      {% else %}
+        {{ 'product-1' | placeholder_svg_tag: 'w-full h-full object-contain bg-gray-100' }}
+      {% endif %}
+    </a>
+    {% if product.available %}
+      {% if product.variants.size > 1 %}
+        <a
+          href="{{ product.url }}"
+          class="product-cart__button block w-full border border-[#212322] mt-3 text-center m-0 cursor-pointer tracking-[1px] uppercase leading-[30px] py-[9px] px-[30px] text-[13px] transition-all duration-200 ease-in-out hover:bg-[#212121] hover:text-white"
+        >
+          Quick View
+        </a>
+      {% else %}
+        <button
+          data-variant-id="{{ product.variants.first.id }}"
+          type="button"
+          class="product-cart__button block w-full border border-[#212322] mt-3 text-center m-0 cursor-pointer tracking-[1px] uppercase leading-[30px] py-[9px] px-[30px] text-[13px] transition-all duration-200 ease-in-out hover:bg-[#212121] hover:text-white"
+        >
+          Add to cart
+        </button>
+      {% endif %}
+    {% else %}
+      <button
+        type="button"
+        disabled
+        aria-disabled="true"
+        class="product-cart__button block w-full border border-[#212322] cursor-not-allowed opacity-60 mt-3 text-center m-0 pointer-events-none tracking-[1px] uppercase leading-[30px] py-[9px] px-[30px] text-[13px]"
+      >
+        Sold out
+      </button>
+    {% endif %}
+  </div>
+
+  <div class="product-card__bottom mt-3">
+    <a class="block hover:opacity-70 transition-opacity duration-200 ease-in-out" href="{{ product.url }}">
+      <p
+        class="product__micro-copy font-secondary tracking-[1px] leading-[1.3] text-[rgba(33,35,34,0.55)] mb-[6px] text-[0.9rem]"
+      >
+        Unscented
+      </p>
+      <h3 class="product__title leading-[1.3] text-[16px] tracking-[1px] font-secondary capitalize">
+        {{ product.title }}
+      </h3>
+      <p class="product__price mt-1.5 font-bold tracking-[1px] font-secondary">{{ product.price | money }}</p>
+    </a>
+  </div>
+</div>
+
+-------------
+// PRODUCT SNIPPET JS
+function initAddToCartButtons(scope = document) {
+    const buttons = scope.querySelectorAll('.product-cart__button');
+
+    buttons.forEach((button) => {
+        // Avoid re-attaching event listeners
+        if (button.dataset.listenerAttached) return;
+        button.dataset.listenerAttached = 'true';
+
+        if (button.disabled) return;
+
+        button.addEventListener('click', async () => {
+            if (button.textContent.trim().toLowerCase() !== 'add to cart') return;
+
+            const variantId = button.getAttribute('data-variant-id');
+            if (!variantId) return;
+
+            try {
+                await fetch('/cart/add.js', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        Accept: 'application/json',
+                    },
+                    body: JSON.stringify({ id: variantId, quantity: 1 }),
+                });
+
+                const cartData = await (await fetch('/cart.js')).json();
+                const cartCountEl = document.getElementById('CartCount');
+                if (cartCountEl) {
+                    cartCountEl.textContent = cartData.item_count;
+                }
+
+                // Optional toast message
+                if (typeof showCartToast === 'function') {
+                    showCartToast();
+                }
+            } catch (error) {
+                console.error('Error adding to cart:', error);
+            }
+        });
+    });
+}
+
+
+
+
+<!-- GLIDE JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css"></link>
+
+
+    <!-- Glide.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide" defer></script> 
+
+
+
+    // PRODUCT CARD RENER 
+    {% render 'product-card', product:product %}

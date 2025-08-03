@@ -675,6 +675,9 @@
   .gap-x-\[24px\] {
     column-gap: 24px;
   }
+  .gap-x-\[48px\] {
+    column-gap: 48px;
+  }
   .gap-x-\[60px\] {
     column-gap: 60px;
   }

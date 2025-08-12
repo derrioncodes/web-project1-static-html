@@ -162,3 +162,93 @@
 .accordion-content ul li:last-child {
     margin-bottom: 0;
 }
+
+/* SINGLE PRODUCT SWIPER JS */
+:root {
+    /* --thumbArrow: 36px; */
+    /* arrow size */
+    /* --thumbGap: 8px; */
+    /* spacing from track edge */
+}
+
+/* Shell positions arrows relative to the carousel */
+.thumbs-shell {
+    position: relative;
+}
+
+/* Make the track narrower so side arrows show on mobile (horizontal) */
+.thumbs-swiper {
+    max-width: calc(100% - (24px * 2) - (8px * 2));
+    margin: 0 auto;
+}
+
+/* Arrows base style */
+.thumb-arrow {
+    position: absolute;
+    z-index: 5;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #212322 !important;
+    
+}
+
+/* Use built-in Swiper arrow pseudo icons or add your SVGs via ::before if you prefer */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    font-size: 16px;
+    /* Swiper default icon size */
+}
+
+/* Mobile (horizontal): arrows left/right center */
+.swiper-button-prev {
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.swiper-button-next {
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Thumbs look/active state */
+.product-thumbs .thumbnail,
+.thumbs-swiper .thumbnail {
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.product-thumbs .thumbnail.is-active,
+.thumbs-swiper .thumbnail.is-active {
+    border-color: #212322;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    display: none;
+}
+
+/* Vertical mode ≥768px: arrows become top/bottom center, track full width */
+@media (min-width: 768px) {
+    .thumbs-swiper {
+        max-width: 100%;
+    }
+
+    .swiper-button-prev {
+        left: 50%;
+        top: 0;
+        transform: translate(-50%, 0);
+    }
+
+    .swiper-button-next {
+        left: 50%;
+        bottom: 0;
+        top: auto;
+        transform: translate(-50%, 0);
+    }
+}

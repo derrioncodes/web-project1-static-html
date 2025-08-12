@@ -10,6 +10,9 @@
     <!-- GLIDE JS  -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
 
+    <!-- SWIPER JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
     <!-- FONT FAMILY - ROBOTO -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -373,20 +376,84 @@
 
     <!-- START OF SINGLE PRODUCT -->
     <section class="px-[18px] mb-6 lg:mb-16 lg:px-[30px] max-w-[1900px] mx-auto">
-        <div class="single-product__container">
-            <div class="product-media">
+        <div class="single-product__container mt-8 lg:flex">
+            <div class="product-media w-full mb-8 lg:w-[60%] lg:mr-10">
+                <div class="main-image__wrapper">
+                    <img class="object-contain" src="./assets/PAPATUI_single-product_image.png" alt="">
+                </div>
 
+                <!-- Swiper Thumbnail Carousel -->
+                <div class="thumbs-shell mt-4 relative">
+                    <!-- arrows -->
+                    <button class="thumb-arrow prev swiper-button-prev" aria-label="Previous">
+                        <!-- left svg -->
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                        </svg></button>
+                    <button class="thumb-arrow next swiper-button-next" aria-label="Next">
+                        <!-- right svg -->
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                        </svg>
+                    </button>
+
+                    <div class="swiper thumbs-swiper">
+                        <div class="swiper-wrapper thumbnails__wrapper">
+                            <div class="swiper-slide thumbnail">
+                                <img class="w-full h-auto object-contain"
+                                    src="./assets/PAPATUI_single-product_image.png" alt="View 1">
+                            </div>
+                            <div class="swiper-slide thumbnail">
+                                <img class="w-full h-auto object-contain" src="./assets/PAPATUI_PDP_Toner__02.png"
+                                    alt="View 2">
+                            </div>
+                            <div class="swiper-slide thumbnail">
+                                <img class="w-full h-auto object-contain" src="./assets/PAPATUI_PDP_Toner__03.png"
+                                    alt="View 3">
+                            </div>
+                            <div class="swiper-slide thumbnail">
+                                <img class="w-full h-auto object-contain" src="./assets/PAPATUI_PDP_Toner__04.png"
+                                    alt="View 4">
+                            </div>
+                            <div class="swiper-slide thumbnail">
+                                <img class="w-full h-auto object-contain" src="./assets/PAPATUI_PDP_Toner__05.png"
+                                    alt="View 5">
+                            </div>
+                            <div class="swiper-slide thumbnail">
+                                <img class="w-full h-auto object-contain" src="./assets/PAPATUI_PDP_Toner__06.png"
+                                    alt="View 6">
+                            </div>
+                            <div class="swiper-slide thumbnail">
+                                <img class="w-full h-auto object-contain" src="./assets/PAPATUI_PDP_Toner__07.png"
+                                    alt="View 7">
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="details w-full max-w-[640px] mx-auto">
+
+
+
+
+
+            <div class="details w-full max-w-[640px] mx-auto lg:w-[40%]">
                 <h1 class="mb-4 text-2xl uppercase">Rejuvenating Facial Toner</h1>
                 <p class="product-price mt-[12px] mb-[12px] text-xl leading-[1.4] font-secondary">$10.00</p>
                 <div class="spacer border-b border-[rgba(33,35,34,0.2)] pt-[6px] mb-[24px]"></div>
                 <div class="product-options flex mb-[24px]">
-                    <div class="uppercase text-xs mr-3 mt-2.5">Scent:</div>
+                    <div class="uppercase text-xs mr-3 mt-2.5 font-secondary tracking-[1px]">Scent:</div>
                     <div class="variants flex flex-wrap gap-1.5">
-                        <div class="variant text-xs px-4 py-2 border border-[#212322] w-fit shadow-[0_0_3px_1px_rgba(33,35,34,0.2)] cursor-pointer hover:shadow-[0_0_3px_1px_rgba(33,35,34,0.2)]">Lush Coconut</div>
-                        <div class="variant text-xs w-fit px-4 py-2 border border-[rgba(33,35,34,0.2)] cursor-pointer hover:shadow-[0_0_3px_1px_rgba(33,35,34,0.2)] hover:border-[#212322]">Sandalwood Suede</div>
-                        <div class="variant text-xs w-fit px-4 py-2 border border-[rgba(33,35,34,0.2)] cursor-pointer hover:shadow-[0_0_3px_1px_rgba(33,35,34,0.2)] hover:border-[#212322]">Cedar Sport</div>
+                        <div
+                            class="variant font-secondary text-xs px-4 py-2 border border-[#212322] w-fit shadow-[0_0_3px_1px_rgba(33,35,34,0.2)] cursor-pointer hover:shadow-[0_0_3px_1px_rgba(33,35,34,0.2)]">
+                            Lush Coconut</div>
+                        <div
+                            class="variant font-secondary text-xs w-fit px-4 py-2 border border-[rgba(33,35,34,0.2)] cursor-pointer hover:shadow-[0_0_3px_1px_rgba(33,35,34,0.2)] hover:border-[#212322]">
+                            Sandalwood Suede</div>
+                        <div
+                            class="variant font-secondary text-xs w-fit px-4 py-2 border border-[rgba(33,35,34,0.2)] cursor-pointer hover:shadow-[0_0_3px_1px_rgba(33,35,34,0.2)] hover:border-[#212322]">
+                            Cedar Sport</div>
                     </div>
                 </div>
                 <p class="mb-[0.75em] text-[12px] uppercase tracking-[1px] font-secondary">Quantity</p>
@@ -408,9 +475,13 @@
                 <button
                     class="py-[9px] px-[18px] mb-6 text-center w-full bg-[#d6d2c4] text-[#3e4827] uppercase text-xs leading-[30px] tracking-[1px] transition-all duration-200 ease-in-out hover:bg-[#ccc7b5] cursor-pointer">Add
                     to cart</button>
+                <div class="spacer border-b border-[rgba(33,35,34,0.2)] pt-[6px] mb-[24px]"></div>
                 <div class="product-description">
                     <h3 class="mb-[3px] font-medium uppercase text-[18px] leading-[1.7]">Product Description</h3>
-                    <p class="mb-4 leading-[2] font-normal text-sm tracking-[0px] font-secondary">Refresh and hydrate skin with hard working ingredients. This smoothing and soothing formula helps to whisk away dead skin cells and blemish-causing oil without harsh scrubbing or alcohol. Minimizes appearance of pores, enhances skin & improves areas of dry, flaky skin.</p>
+                    <p class="mb-4 leading-[2] font-normal text-sm tracking-[0px] font-secondary">Refresh and hydrate
+                        skin with hard working ingredients. This smoothing and soothing formula helps to whisk away dead
+                        skin cells and blemish-causing oil without harsh scrubbing or alcohol. Minimizes appearance of
+                        pores, enhances skin & improves areas of dry, flaky skin.</p>
                     <p class="mb-4 leading-[2] font-normal text-base">TAKE BETTER CARE<sup>&trade;</sup></p>
                 </div>
                 <div class="accordion">
@@ -425,40 +496,45 @@
                                 <li class="font-secondary">Witch Hazel</li>
                                 <li class="font-secondary">Glycolic Acid</li>
                             </ul>
-                      </div>
+                        </div>
                     </div>
                     <div class="accordion-item">
                         <div class="accordion-header">
                             <h3 class="font-secondary">Benefits</h3>
                             <div class="x-icon"></div>
                         </div>
-                      <div class="accordion-content">
-                        <ul>
-                            <li class="font-secondary">Tightens pore</li>
-                            <li class="font-secondary">Exfoliates, hydrates & brightens skin</li>
-                            <li class="font-secondary">Free from parabens and phthalates, cruelty free, formulated without sulfates and vegan</li>
-                        </ul>
-                      </div>
+                        <div class="accordion-content">
+                            <ul>
+                                <li class="font-secondary">Tightens pore</li>
+                                <li class="font-secondary">Exfoliates, hydrates & brightens skin</li>
+                                <li class="font-secondary">Free from parabens and phthalates, cruelty free, formulated
+                                    without sulfates and vegan</li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="accordion-item">
                         <div class="accordion-header">
                             <h3 class="font-secondary">Scent Notes</h3>
                             <div class="x-icon"></div>
                         </div>
-                      <div class="accordion-content">
-                        <p class="font-secondary">Unscented</p>
-                      </div>
+                        <div class="accordion-content">
+                            <p class="font-secondary">Unscented</p>
+                        </div>
                     </div>
                     <div class="accordion-item">
                         <div class="accordion-header">
                             <h3 class="font-secondary">Full Ingredient List</h3>
                             <div class="x-icon"></div>
                         </div>
-                      <div class="accordion-content">
-                        <p class="font-secondary">Ingredients: Water, Hamamelis Virginiana (Witch Hazel) Water, Propanediol, Glycolic Acid, Lactic Acid, Ethoxydiglycol, Glycerin, Sodium Hydroxide, Sodium Hyaluronate, Tartaric Acid, Phytic Acid, Hibiscus Sabdariffa (Red Sorrel) Flower Extract, Gluconolactone, Phenoxyethanol, Ethylhexylglycerin, Benzoic Acid, Tocopherol.</p>
-                      </div>
+                        <div class="accordion-content">
+                            <p class="font-secondary">Ingredients: Water, Hamamelis Virginiana (Witch Hazel) Water,
+                                Propanediol, Glycolic Acid, Lactic Acid, Ethoxydiglycol, Glycerin, Sodium Hydroxide,
+                                Sodium Hyaluronate, Tartaric Acid, Phytic Acid, Hibiscus Sabdariffa (Red Sorrel) Flower
+                                Extract, Gluconolactone, Phenoxyethanol, Ethylhexylglycerin, Benzoic Acid, Tocopherol.
+                            </p>
+                        </div>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
@@ -538,12 +614,77 @@
     <!-- External libraries (e.g., Glide.js) -->
     <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
 
+    <!-- External libraries (e.g., Swiper.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <!-- Your custom scripts -->
     <script src="/js/app.js"></script>
 
     <!-- Inline scripts for initialization -->
 
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
 
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const mainImg = document.querySelector(".main-image__wrapper img");
+            const thumbsEl = document.querySelector(".thumbs-swiper");
+
+            const thumbs = new Swiper(thumbsEl, {
+                direction: 'horizontal',
+                slidesPerView: 3,
+                spaceBetween: 12,
+                slideToClickedSlide: true,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                breakpoints: {
+                    640: {
+                        slidesPerView: 3,
+                        spaceBetween: 12,
+                    },
+                    768: {
+                        direction: 'vertical',
+                        slidesPerView: 6,
+                        spaceBetween: 12,
+                    }
+                },
+                on: {
+                    init(swiper) {
+                        syncMain(swiper.realIndex);
+                        markActive(swiper.realIndex);
+                    },
+                    slideChange(swiper) {
+                        syncMain(swiper.realIndex);
+                        markActive(swiper.realIndex);
+                    }
+                }
+            });
+
+            function syncMain(index) {
+                const slide = thumbsEl.querySelectorAll(".swiper-slide")[index];
+                const img = slide?.querySelector("img");
+                if (!img) return;
+                mainImg.src = img.src;
+                mainImg.alt = img.alt || "Product image";
+            }
+
+            function markActive(index) {
+                thumbsEl.querySelectorAll(".thumbnail").forEach((el, i) => {
+                    el.classList.toggle("is-active", i === index);
+                });
+            }
+
+            // Optional: keyboard support when thumb rail is focused
+            thumbsEl.setAttribute("tabindex", "0");
+            thumbsEl.addEventListener("keydown", (e) => {
+                if (e.key === "ArrowLeft" || e.key === "ArrowUp") thumbs.slidePrev();
+                if (e.key === "ArrowRight" || e.key === "ArrowDown") thumbs.slideNext();
+            });
+        });
+    </script>
 
 
 

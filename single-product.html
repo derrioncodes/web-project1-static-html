@@ -10,8 +10,6 @@
     <!-- GLIDE JS  -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
 
-    <!-- SWIPER JS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <!-- FONT FAMILY - ROBOTO -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -377,60 +375,67 @@
     <!-- START OF SINGLE PRODUCT -->
     <section class="px-[18px] mb-6 lg:mb-16 lg:px-[30px] max-w-[1900px] mx-auto">
         <div class="single-product__container mt-8 lg:flex">
-            <div class="product-media w-full mb-8 lg:w-[60%] lg:mr-10">
+            <div class="product-media w-full mb-8 md:flex md:flex-row-reverse md:items-start md:gap-4 lg:w-[60%] lg:mr-10">
                 <div class="main-image__wrapper">
                     <img class="object-contain" src="./assets/PAPATUI_single-product_image.png" alt="">
                 </div>
 
-                <!-- Swiper Thumbnail Carousel -->
-                <div class="thumbs-shell mt-4 relative">
-                    <!-- arrows -->
-                    <button class="thumb-arrow prev swiper-button-prev" aria-label="Previous">
-                        <!-- left svg -->
+                <!-- Thumbs -->
+                <div class="product-thumbs mt-4 relative
+                md:grid md:grid-rows-[auto_1fr_auto] md:gap-2 md:items-centerX md:justify-items-center md:mt-3 md:flex-none">
+                    <!-- left arrow -->
+                    <button type="button" class="thumb-arrow prev absolute top-1/2 -translate-y-1/2 left-0 z-10 
+                    md:static md:translate-y-0 md:left-auto md:z-auto md:rotate-[90deg]" aria-label="Prev thumbnails">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" class="size-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
-                        </svg></button>
-                    <button class="thumb-arrow next swiper-button-next" aria-label="Next">
-                        <!-- right svg -->
+                        </svg>
+                    </button>
+
+                    <!-- Viewport wraps the UL so only this area scrolls at md+ -->
+                    <div class="thumbs-viewport scrollbar-hide w-[80%] mx-auto overflow-x-auto overflow-y-hidden 
+                    md:overflow-x-hidden md:overflow-y-auto md:w-fit">
+                        <ul class="thumbnails__wrapper my-[18px] flex gap-2 
+                        md:my-0 md:flex-col">
+                            <li class="thumbnail md:flex-none md:w-[70px]">
+                                <img class="w-full h-auto object-contain"
+                                    src="./assets/PAPATUI_single-product_image.png" alt="View 1">
+                            </li>
+                            <li class="thumbnail md:w-[70px]">
+                                <img class="w-full h-auto object-contain" src="./assets/PAPATUI_PDP_Toner__02.png"
+                                    alt="View 2">
+                            </li>
+                            <li class="thumbnail md:flex-none md:w-[70px]">
+                                <img class="w-full h-auto object-contain" src="./assets/PAPATUI_PDP_Toner__03.png"
+                                    alt="View 3">
+                            </li>
+                            <li class="thumbnail md:flex-none md:w-[70px]">
+                                <img class="w-full h-auto object-contain" src="./assets/PAPATUI_PDP_Toner__04.png"
+                                    alt="View 4">
+                            </li>
+                            <li class="thumbnail md:flex-none md:w-[70px]">
+                                <img class="w-full h-auto object-contain" src="./assets/PAPATUI_PDP_Toner__05.png"
+                                    alt="View 5">
+                            </li>
+                            <li class="thumbnail md:flex-none md:w-[70px]">
+                                <img class="w-full h-auto object-contain" src="./assets/PAPATUI_PDP_Toner__06.png"
+                                    alt="View 6">
+                            </li>
+                            <li class="thumbnail md:flex-none md:w-[70px]">
+                                <img class="w-full h-auto object-contain" src="./assets/PAPATUI_PDP_Toner__07.png"
+                                    alt="View 7">
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- right arrow -->
+                    <button type="button" class="thumb-arrow next absolute top-1/2 -translate-y-1/2 right-0 z-10 
+                    md:static md:translate-y-0 md:right-auto md:z-auto md:rotate-[90deg]" aria-label="Next thumbnails">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" class="size-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                         </svg>
                     </button>
-
-                    <div class="swiper thumbs-swiper">
-                        <div class="swiper-wrapper thumbnails__wrapper">
-                            <div class="swiper-slide thumbnail">
-                                <img class="w-full h-auto object-contain"
-                                    src="./assets/PAPATUI_single-product_image.png" alt="View 1">
-                            </div>
-                            <div class="swiper-slide thumbnail">
-                                <img class="w-full h-auto object-contain" src="./assets/PAPATUI_PDP_Toner__02.png"
-                                    alt="View 2">
-                            </div>
-                            <div class="swiper-slide thumbnail">
-                                <img class="w-full h-auto object-contain" src="./assets/PAPATUI_PDP_Toner__03.png"
-                                    alt="View 3">
-                            </div>
-                            <div class="swiper-slide thumbnail">
-                                <img class="w-full h-auto object-contain" src="./assets/PAPATUI_PDP_Toner__04.png"
-                                    alt="View 4">
-                            </div>
-                            <div class="swiper-slide thumbnail">
-                                <img class="w-full h-auto object-contain" src="./assets/PAPATUI_PDP_Toner__05.png"
-                                    alt="View 5">
-                            </div>
-                            <div class="swiper-slide thumbnail">
-                                <img class="w-full h-auto object-contain" src="./assets/PAPATUI_PDP_Toner__06.png"
-                                    alt="View 6">
-                            </div>
-                            <div class="swiper-slide thumbnail">
-                                <img class="w-full h-auto object-contain" src="./assets/PAPATUI_PDP_Toner__07.png"
-                                    alt="View 7">
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
 
@@ -614,77 +619,258 @@
     <!-- External libraries (e.g., Glide.js) -->
     <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
 
-    <!-- External libraries (e.g., Swiper.js) -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!-- Your custom scripts -->
-    <script src="/js/app.js"></script>
+    <!-- <script src="/js/app.js"></script> -->
 
     <!-- Inline scripts for initialization -->
 
     <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
 
 
-
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const mainImg = document.querySelector(".main-image__wrapper img");
-            const thumbsEl = document.querySelector(".thumbs-swiper");
+        document.addEventListener('DOMContentLoaded', () => {
+            const mainImg = document.querySelector('.main-image__wrapper img');
+            const viewport = document.querySelector('.thumbs-viewport')
+                || document.querySelector('.thumbnails__wrapper'); // fallback
+            const track = document.querySelector('.thumbnails__wrapper');
+            const thumbs = Array.from(document.querySelectorAll('.thumbnail'));
+            const prevBtn = document.querySelector('.thumb-arrow.prev');
+            const nextBtn = document.querySelector('.thumb-arrow.next');
 
-            const thumbs = new Swiper(thumbsEl, {
-                direction: 'horizontal',
-                slidesPerView: 3,
-                spaceBetween: 12,
-                slideToClickedSlide: true,
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-                breakpoints: {
-                    640: {
-                        slidesPerView: 3,
-                        spaceBetween: 12,
-                    },
-                    768: {
-                        direction: 'vertical',
-                        slidesPerView: 6,
-                        spaceBetween: 12,
-                    }
-                },
-                on: {
-                    init(swiper) {
-                        syncMain(swiper.realIndex);
-                        markActive(swiper.realIndex);
-                    },
-                    slideChange(swiper) {
-                        syncMain(swiper.realIndex);
-                        markActive(swiper.realIndex);
-                    }
+            if (!mainImg || !viewport || !track || thumbs.length === 0) return;
+
+
+            // --- select a thumbnail -> update main + highlight ---
+            function setActive(li) {
+                thumbs.forEach(t => t.classList.remove('is-active'));
+                li.classList.add('is-active');
+                const img = li.querySelector('img');
+                if (img) {
+                    mainImg.src = img.src;
+                    mainImg.alt = img.alt || 'Product image';
                 }
-            });
-
-            function syncMain(index) {
-                const slide = thumbsEl.querySelectorAll(".swiper-slide")[index];
-                const img = slide?.querySelector("img");
-                if (!img) return;
-                mainImg.src = img.src;
-                mainImg.alt = img.alt || "Product image";
+                ensureVisible(li);
             }
 
-            function markActive(index) {
-                thumbsEl.querySelectorAll(".thumbnail").forEach((el, i) => {
-                    el.classList.toggle("is-active", i === index);
-                });
+            function ensureVisible(li) {
+                const vr = viewport.getBoundingClientRect();
+                const lr = li.getBoundingClientRect();
+                if (lr.left < vr.left) {
+                    viewport.scrollBy({ left: lr.left - vr.left - 8, behavior: 'smooth' });
+                } else if (lr.right > vr.right) {
+                    viewport.scrollBy({ left: lr.right - vr.right + 8, behavior: 'smooth' });
+                }
             }
 
-            // Optional: keyboard support when thumb rail is focused
-            thumbsEl.setAttribute("tabindex", "0");
-            thumbsEl.addEventListener("keydown", (e) => {
-                if (e.key === "ArrowLeft" || e.key === "ArrowUp") thumbs.slidePrev();
-                if (e.key === "ArrowRight" || e.key === "ArrowDown") thumbs.slideNext();
+            // init active
+            setActive(thumbs[0]);
+            thumbs.forEach(li => li.addEventListener('click', () => setActive(li)));
+
+            // --- arrows: page by group (3 / 4 / 5) ---
+            function perView() {
+                const w = window.innerWidth;
+                if (w >= 641) return 5;   // 641–767
+                if (w >= 480) return 4;   // 480–640
+                return 3;                 // <480
+            }
+
+            function unitSize() {
+                const a = thumbs[0].getBoundingClientRect();
+                let gap = 8;
+                if (thumbs[1]) {
+                    const b = thumbs[1].getBoundingClientRect();
+                    gap = Math.max(0, b.left - a.right); // actual computed gap
+                }
+                return a.width + gap;
+            }
+
+            function pageBy(dir) {
+                const step = perView() * unitSize();
+                viewport.scrollBy({ left: dir * step, behavior: 'smooth' });
+            }
+
+            function hasOverflowX(el) {
+                return (el.scrollWidth - el.clientWidth) > 1;
+            }
+
+            function updateArrows() {
+                if (!prevBtn || !nextBtn) return;
+
+                // enable buttons by default (avoid native disabled attr problems)
+                prevBtn.disabled = false;
+                nextBtn.disabled = false;
+
+                // if nothing to scroll, both visually disabled
+                if (!hasOverflowX(viewport)) {
+                    prevBtn.classList.add('is-disabled');
+                    nextBtn.classList.add('is-disabled');
+                    return;
+                }
+
+                const eps = 1;
+                const max = Math.max(0, viewport.scrollWidth - viewport.clientWidth - eps);
+                const atStart = viewport.scrollLeft <= eps;
+                const atEnd = viewport.scrollLeft >= max;
+
+                prevBtn.classList.toggle('is-disabled', atStart);
+                nextBtn.classList.toggle('is-disabled', atEnd);
+            }
+
+            prevBtn?.addEventListener('click', (e) => {
+                e.preventDefault();
+                if (prevBtn.classList.contains('is-disabled')) return;
+                pageBy(-1);
             });
+
+            nextBtn?.addEventListener('click', (e) => {
+                e.preventDefault();
+                if (nextBtn.classList.contains('is-disabled')) return;
+                pageBy(1);
+            });
+
+            viewport.addEventListener('scroll', updateArrows);
+            window.addEventListener('resize', () => requestAnimationFrame(updateArrows));
+            window.addEventListener('load', () => setTimeout(updateArrows, 0)); // after images settle
+
+            updateArrows();
+            console.log(viewport.scrollWidth, viewport.clientWidth)
         });
     </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mainImg = document.querySelector('.main-image__wrapper img');
+            const viewport = document.querySelector('.thumbs-viewport')
+                || document.querySelector('.thumbnails__wrapper'); // scroller
+            const track = document.querySelector('.thumbnails__wrapper');
+            const thumbs = Array.from(document.querySelectorAll('.thumbnail'));
+            const prevBtn = document.querySelector('.thumb-arrow.prev');
+            const nextBtn = document.querySelector('.thumb-arrow.next');
+
+            if (!mainImg || !viewport || !track || thumbs.length === 0) return;
+
+            // --- config ---
+            const GAP_FALLBACK = 8;   // keep in sync with your CSS gap
+            const ROWS_DESKTOP = 6;   // visible rows at ≥768px (tweak to taste)
+
+            // --- helpers (declarations are hoisted) ---
+            function isVertical() { return window.innerWidth >= 768; }
+
+            function perViewMobile() {
+                const w = window.innerWidth;
+                if (w >= 641) return 5;
+                if (w >= 480) return 4;
+                return 3;
+            }
+            function perViewCurrent() { return isVertical() ? ROWS_DESKTOP : perViewMobile(); }
+
+            // size of one thumb + gap in current axis
+            function unitSize() {
+                const a = thumbs[0].getBoundingClientRect();
+                let gap = GAP_FALLBACK;
+                if (thumbs[1]) {
+                    const b = thumbs[1].getBoundingClientRect();
+                    gap = isVertical()
+                        ? Math.max(0, b.top - a.bottom) // vertical gap
+                        : Math.max(0, b.left - a.right); // horizontal gap
+                }
+                const size = isVertical() ? a.height : a.width;
+                return { size, gap };
+            }
+
+            // optional: fix viewport height to exactly N rows at desktop
+            function setViewportHeight() {
+                if (!isVertical()) { viewport.style.height = ''; return; }
+                const { size, gap } = unitSize();
+                const h = (ROWS_DESKTOP * size) + (gap * (ROWS_DESKTOP - 1));
+                viewport.style.height = `${Math.max(0, h)}px`;
+            }
+
+            // selection
+            function ensureVisible(li) {
+                const vr = viewport.getBoundingClientRect();
+                const lr = li.getBoundingClientRect();
+                if (isVertical()) {
+                    if (lr.top < vr.top) viewport.scrollBy({ top: lr.top - vr.top - 8, behavior: 'smooth' });
+                    else if (lr.bottom > vr.bottom) viewport.scrollBy({ top: lr.bottom - vr.bottom + 8, behavior: 'smooth' });
+                } else {
+                    if (lr.left < vr.left) viewport.scrollBy({ left: lr.left - vr.left - 8, behavior: 'smooth' });
+                    else if (lr.right > vr.right) viewport.scrollBy({ left: lr.right - vr.right + 8, behavior: 'smooth' });
+                }
+            }
+
+            function setActive(li) {
+                thumbs.forEach(t => t.classList.remove('is-active'));
+                li.classList.add('is-active');
+                const img = li.querySelector('img');
+                if (img) { mainImg.src = img.src; mainImg.alt = img.alt || 'Product image'; }
+                ensureVisible(li);
+            }
+
+            // arrows
+            function pageBy(dir) {
+                const { size, gap } = unitSize();
+                const step = perViewCurrent() * (size + gap);
+                if (isVertical()) viewport.scrollBy({ top: dir * step, behavior: 'smooth' });
+                else viewport.scrollBy({ left: dir * step, behavior: 'smooth' });
+            }
+
+            function updateArrows() {
+                const eps = 1;
+                if (isVertical()) {
+                    const max = Math.max(0, viewport.scrollHeight - viewport.clientHeight - eps);
+                    const atStart = viewport.scrollTop <= eps;
+                    const atEnd = viewport.scrollTop >= max;
+                    prevBtn?.classList.toggle('is-disabled', atStart);
+                    nextBtn?.classList.toggle('is-disabled', atEnd);
+                } else {
+                    const max = Math.max(0, viewport.scrollWidth - viewport.clientWidth - eps);
+                    const atStart = viewport.scrollLeft <= eps;
+                    const atEnd = viewport.scrollLeft >= max;
+                    prevBtn?.classList.toggle('is-disabled', atStart);
+                    nextBtn?.classList.toggle('is-disabled', atEnd);
+                }
+            }
+
+            // --- wire up ---
+            setActive(thumbs[0]);
+            thumbs.forEach(li => li.addEventListener('click', () => setActive(li)));
+
+            prevBtn?.addEventListener('click', (e) => { e.preventDefault(); if (!prevBtn.classList.contains('is-disabled')) pageBy(-1); });
+            nextBtn?.addEventListener('click', (e) => { e.preventDefault(); if (!nextBtn.classList.contains('is-disabled')) pageBy(1); });
+
+            viewport.addEventListener('scroll', updateArrows);
+
+            // keep layout in sync when images load / resize
+            let raf;
+            function refresh() {
+                cancelAnimationFrame(raf);
+                raf = requestAnimationFrame(() => {
+                    setViewportHeight();
+                    updateArrows();
+                });
+            }
+            window.addEventListener('resize', refresh);
+            window.addEventListener('load', () => setTimeout(refresh, 0));
+
+            // initial pass
+            refresh();
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

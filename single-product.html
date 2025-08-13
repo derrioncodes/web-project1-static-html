@@ -375,13 +375,35 @@
     <!-- START OF SINGLE PRODUCT -->
     <section class="px-[18px] mb-6 lg:mb-16 lg:px-[30px] max-w-[1900px] mx-auto">
         <div class="single-product__container mt-8 lg:flex">
-            <div class="product-media w-full mb-8 md:flex md:flex-row-reverse md:items-start md:gap-4 lg:w-[60%] lg:mr-10">
-                <div class="main-image__wrapper">
+            <div
+                class="product-media w-full mb-8 md:flex md:flex-row-reverse md:items-start md:gap-4 lg:w-[60%] lg:mr-10">
+                <div class="main-image__wrapper relative group">
+                    <!-- Prev arrow -->
+                    <button type="button"
+                        class="main-arrow prev absolute top-1/2 left-4 -translate-y-1/2 z-10 bg-white shadow-md w-[48px] h-[48px] flex items-center justify-center cursor-pointer pointer-events-none group-hover:pointer-events-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        aria-label="Previous image">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                        </svg>
+                    </button>
+
                     <img class="object-contain" src="./assets/PAPATUI_single-product_image.png" alt="">
+
+                    <!-- Next arrow -->
+                    <button type="button"
+                        class="main-arrow next absolute top-1/2 right-4 -translate-y-1/2 z-10 bg-white shadow-md w-[48px] h-[48px] flex items-center justify-center cursor-pointer pointer-events-none group-hover:pointer-events-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        aria-label="Next image">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                        </svg>
+                    </button>
                 </div>
 
                 <!-- Thumbs -->
-                <div class="product-thumbs mt-4 relative
+                <div
+                    class="product-thumbs mt-4 relative
                 md:grid md:grid-rows-[auto_1fr_auto] md:gap-2 md:items-centerX md:justify-items-center md:mt-3 md:flex-none">
                     <!-- left arrow -->
                     <button type="button" class="thumb-arrow prev absolute top-1/2 -translate-y-1/2 left-0 z-10 
@@ -627,8 +649,152 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
 
-
     <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- elements ---
+            const mainImg = document.querySelector('.main-image__wrapper img');
+            const viewport = document.querySelector('.thumbs-viewport')
+                || document.querySelector('.thumbnails__wrapper'); // scroller fallback
+            const track = document.querySelector('.thumbnails__wrapper');
+            const thumbs = Array.from(document.querySelectorAll('.thumbnail'));
+
+            const thumbPrev = document.querySelector('.thumb-arrow.prev');
+            const thumbNext = document.querySelector('.thumb-arrow.next');
+            const mainPrev = document.querySelector('.main-arrow.prev');
+            const mainNext = document.querySelector('.main-arrow.next');
+
+            if (!mainImg || !viewport || !track || thumbs.length === 0) return;
+
+            // --- config ---
+            const GAP = 8;           // match your CSS gap
+            const ROWS_DESKTOP = 6;  // visible rows at ≥768px (optional height lock)
+
+            // --- helpers ---
+            function isVertical() { return window.innerWidth >= 768; }
+
+            function perViewMobile() {
+                const w = window.innerWidth;
+                if (w >= 641) return 5;        // 641–767
+                if (w >= 480) return 4;        // 480–640
+                return 3;                      // <480
+            }
+            function perViewCurrent() { return isVertical() ? ROWS_DESKTOP : perViewMobile(); }
+
+            // size of one thumb + gap along current axis
+            function unitSize() {
+                const a = thumbs[0].getBoundingClientRect();
+                let gap = GAP;
+                if (thumbs[1]) {
+                    const b = thumbs[1].getBoundingClientRect();
+                    gap = isVertical()
+                        ? Math.max(0, b.top - a.bottom)   // vertical gap
+                        : Math.max(0, b.left - a.right);   // horizontal gap
+                }
+                const size = isVertical() ? a.height : a.width;
+                return { size, gap };
+            }
+
+            // keep the active thumb fully in view
+            function ensureVisible(li) {
+                const vr = viewport.getBoundingClientRect();
+                const lr = li.getBoundingClientRect();
+                if (isVertical()) {
+                    if (lr.top < vr.top) viewport.scrollBy({ top: lr.top - vr.top - GAP, behavior: 'smooth' });
+                    else if (lr.bottom > vr.bottom) viewport.scrollBy({ top: lr.bottom - vr.bottom + GAP, behavior: 'smooth' });
+                } else {
+                    if (lr.left < vr.left) viewport.scrollBy({ left: lr.left - vr.left - GAP, behavior: 'smooth' });
+                    else if (lr.right > vr.right) viewport.scrollBy({ left: lr.right - vr.right + GAP, behavior: 'smooth' });
+                }
+            }
+
+            // page the thumbs viewport by a full "view"
+            function pageThumbs(dir) {
+                const { size, gap } = unitSize();
+                const step = perViewCurrent() * (size + gap);
+                const delta = dir * step;
+                if (isVertical()) viewport.scrollBy({ top: delta, behavior: 'smooth' });
+                else viewport.scrollBy({ left: delta, behavior: 'smooth' });
+            }
+
+            function updateThumbArrows() {
+                const eps = 1;
+                if (!thumbPrev || !thumbNext) return;
+
+                if (isVertical()) {
+                    const max = Math.max(0, viewport.scrollHeight - viewport.clientHeight - eps);
+                    thumbPrev.classList.toggle('is-disabled', viewport.scrollTop <= eps);
+                    thumbNext.classList.toggle('is-disabled', viewport.scrollTop >= max);
+                } else {
+                    const max = Math.max(0, viewport.scrollWidth - viewport.clientWidth - eps);
+                    thumbPrev.classList.toggle('is-disabled', viewport.scrollLeft <= eps);
+                    thumbNext.classList.toggle('is-disabled', viewport.scrollLeft >= max);
+                }
+            }
+
+            // (optional) fix viewport height to exactly N rows on desktop
+            function setViewportHeight() {
+                if (!isVertical()) { viewport.style.height = ''; return; }
+                const { size, gap } = unitSize();
+                const h = (ROWS_DESKTOP * size) + (gap * (ROWS_DESKTOP - 1));
+                viewport.style.height = `${Math.max(0, h)}px`;
+            }
+
+            // --- selection state shared by everything ---
+            let currentIndex = 0;
+
+            function setActiveByIndex(index) {
+                // wrap around
+                if (index < 0) index = thumbs.length - 1;
+                if (index >= thumbs.length) index = 0;
+                currentIndex = index;
+
+                thumbs.forEach(t => t.classList.remove('is-active'));
+                const li = thumbs[index];
+                li.classList.add('is-active');
+
+                const img = li.querySelector('img');
+                if (img) {
+                    mainImg.src = img.src;
+                    mainImg.alt = img.alt || 'Product image';
+                }
+
+                ensureVisible(li);
+            }
+
+            // --- wire up ---
+            setActiveByIndex(0);
+
+            // click a thumbnail
+            thumbs.forEach((li, i) => li.addEventListener('click', () => setActiveByIndex(i)));
+
+            // main image arrows (prev/next image)
+            mainPrev?.addEventListener('click', (e) => { e.preventDefault(); setActiveByIndex(currentIndex - 1); });
+            mainNext?.addEventListener('click', (e) => { e.preventDefault(); setActiveByIndex(currentIndex + 1); });
+
+            // thumbnail arrows (page the strip; do not change selection)
+            thumbPrev?.addEventListener('click', (e) => { e.preventDefault(); if (!thumbPrev.classList.contains('is-disabled')) pageThumbs(-1); });
+            thumbNext?.addEventListener('click', (e) => { e.preventDefault(); if (!thumbNext.classList.contains('is-disabled')) pageThumbs(1); });
+
+            // keep arrows & height in sync
+            viewport.addEventListener('scroll', updateThumbArrows);
+            let raf;
+            function refresh() {
+                cancelAnimationFrame(raf);
+                raf = requestAnimationFrame(() => {
+                    setViewportHeight();
+                    updateThumbArrows();
+                });
+            }
+            window.addEventListener('resize', refresh);
+            window.addEventListener('load', () => setTimeout(refresh, 0));
+
+            refresh(); // first pass
+        });
+    </script>
+
+
+
+    <!-- <script>
         document.addEventListener('DOMContentLoaded', () => {
             const mainImg = document.querySelector('.main-image__wrapper img');
             const viewport = document.querySelector('.thumbs-viewport')
@@ -858,6 +1024,43 @@
             refresh();
         });
     </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mainImg = document.querySelector('.main-image__wrapper img');
+            const thumbs = Array.from(document.querySelectorAll('.thumbnail'));
+            const prevMain = document.querySelector('.main-arrow.prev');
+            const nextMain = document.querySelector('.main-arrow.next');
+
+            let currentIndex = 0;
+
+            function setActive(index) {
+                if (index < 0) index = thumbs.length - 1;
+                if (index >= thumbs.length) index = 0;
+                currentIndex = index;
+
+                thumbs.forEach(t => t.classList.remove('is-active'));
+                thumbs[index].classList.add('is-active');
+
+                const img = thumbs[index].querySelector('img');
+                if (img) {
+                    mainImg.src = img.src;
+                    mainImg.alt = img.alt || 'Product image';
+                }
+            }
+
+            prevMain.addEventListener('click', () => setActive(currentIndex - 1));
+            nextMain.addEventListener('click', () => setActive(currentIndex + 1));
+
+            // Thumbnail click also updates index
+            thumbs.forEach((li, i) => {
+                li.addEventListener('click', () => setActive(i));
+            });
+
+            setActive(0); // init
+        });
+
+    </script> -->
 
 
 

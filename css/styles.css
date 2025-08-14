@@ -243,12 +243,6 @@
   .right-4 {
     right: calc(var(--spacing) * 4);
   }
-  .right-6 {
-    right: calc(var(--spacing) * 6);
-  }
-  .right-8 {
-    right: calc(var(--spacing) * 8);
-  }
   .right-\[-100\%\] {
     right: -100%;
   }
@@ -278,9 +272,6 @@
   }
   .left-4 {
     left: calc(var(--spacing) * 4);
-  }
-  .left-6 {
-    left: calc(var(--spacing) * 6);
   }
   .left-\[-100\%\] {
     left: -100%;
@@ -474,9 +465,6 @@
   .hidden {
     display: none;
   }
-  .inline {
-    display: inline;
-  }
   .inline-block {
     display: inline-block;
   }
@@ -542,17 +530,11 @@
   .h-\[72px\] {
     height: 72px;
   }
-  .h-\[436px\] {
-    height: 436px;
-  }
   .h-\[500px\] {
     height: 500px;
   }
   .h-auto {
     height: auto;
-  }
-  .h-fit {
-    height: fit-content;
   }
   .h-full {
     height: 100%;
@@ -586,9 +568,6 @@
   }
   .w-\[48px\] {
     width: 48px;
-  }
-  .w-\[70px\] {
-    width: 70px;
   }
   .w-\[80\%\] {
     width: 80%;
@@ -670,11 +649,6 @@
   }
   .min-w-full {
     min-width: 100%;
-  }
-  .translate-1\/2 {
-    --tw-translate-x: calc(1/2 * 100%);
-    --tw-translate-y: calc(1/2 * 100%);
-    translate: var(--tw-translate-x) var(--tw-translate-y);
   }
   .-translate-x-1\/2 {
     --tw-translate-x: calc(calc(1/2 * 100%) * -1);
@@ -1808,11 +1782,6 @@
       margin-left: auto;
     }
   }
-  .md\:block {
-    @media (width >= 48rem) {
-      display: block;
-    }
-  }
   .md\:flex {
     @media (width >= 48rem) {
       display: flex;
@@ -1853,11 +1822,6 @@
       height: 100%;
     }
   }
-  .md\:max-h-\[420px\] {
-    @media (width >= 48rem) {
-      max-height: 420px;
-    }
-  }
   .md\:w-1\/2 {
     @media (width >= 48rem) {
       width: calc(1/2 * 100%);
@@ -1866,11 +1830,6 @@
   .md\:w-6 {
     @media (width >= 48rem) {
       width: calc(var(--spacing) * 6);
-    }
-  }
-  .md\:w-\[60px\] {
-    @media (width >= 48rem) {
-      width: 60px;
     }
   }
   .md\:w-\[70px\] {
@@ -1909,16 +1868,6 @@
       translate: var(--tw-translate-x) var(--tw-translate-y);
     }
   }
-  .md\:rotate-\[-45deg\] {
-    @media (width >= 48rem) {
-      rotate: -45deg;
-    }
-  }
-  .md\:rotate-\[45deg\] {
-    @media (width >= 48rem) {
-      rotate: 45deg;
-    }
-  }
   .md\:rotate-\[90deg\] {
     @media (width >= 48rem) {
       rotate: 90deg;
@@ -1944,19 +1893,9 @@
       flex-direction: column;
     }
   }
-  .md\:flex-col-reverse {
-    @media (width >= 48rem) {
-      flex-direction: column-reverse;
-    }
-  }
   .md\:flex-row-reverse {
     @media (width >= 48rem) {
       flex-direction: row-reverse;
-    }
-  }
-  .md\:items-center {
-    @media (width >= 48rem) {
-      align-items: center;
     }
   }
   .md\:items-start {
@@ -1974,11 +1913,6 @@
       gap: calc(var(--spacing) * 2);
     }
   }
-  .md\:gap-3 {
-    @media (width >= 48rem) {
-      gap: calc(var(--spacing) * 3);
-    }
-  }
   .md\:gap-4 {
     @media (width >= 48rem) {
       gap: calc(var(--spacing) * 4);
@@ -1992,16 +1926,6 @@
   .md\:gap-y-\[36px\] {
     @media (width >= 48rem) {
       row-gap: 36px;
-    }
-  }
-  .md\:self-end {
-    @media (width >= 48rem) {
-      align-self: flex-end;
-    }
-  }
-  .md\:self-start {
-    @media (width >= 48rem) {
-      align-self: flex-start;
     }
   }
   .md\:overflow-x-hidden {

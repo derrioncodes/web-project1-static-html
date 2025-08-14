@@ -431,7 +431,7 @@
                                 <img class="w-full h-auto object-contain" src="./assets/PAPATUI_PDP_Toner__03.png"
                                     alt="View 3">
                             </li>
-                            <li class="thumbnail md:flex-none md:w-[70px]">
+                            <!-- <li class="thumbnail md:flex-none md:w-[70px]">
                                 <img class="w-full h-auto object-contain" src="./assets/PAPATUI_PDP_Toner__04.png"
                                     alt="View 4">
                             </li>
@@ -446,7 +446,7 @@
                             <li class="thumbnail md:flex-none md:w-[70px]">
                                 <img class="w-full h-auto object-contain" src="./assets/PAPATUI_PDP_Toner__07.png"
                                     alt="View 7">
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
 
@@ -460,10 +460,6 @@
                     </button>
                 </div>
             </div>
-
-
-
-
 
             <div class="details w-full max-w-[640px] mx-auto lg:w-[40%]">
                 <h1 class="mb-4 text-2xl uppercase">Rejuvenating Facial Toner</h1>
@@ -483,6 +479,7 @@
                             Cedar Sport</div>
                     </div>
                 </div>
+
                 <p class="mb-[0.75em] text-[12px] uppercase tracking-[1px] font-secondary">Quantity</p>
                 <div class="item__quantity flex flex-wrap gap-[12px] items-center justify-start w-full mb-6"
                     style="grid-area: 2 / 2;">
@@ -672,6 +669,12 @@
             // --- helpers ---
             function isVertical() { return window.innerWidth >= 768; }
 
+            function visibleRows() {
+                // How many rows should we show at desktop right now?
+                // If you set ROWS_DESKTOP = 6, this clamps to [0..min(6, thumbs.length)]
+                return Math.max(0, Math.min(ROWS_DESKTOP, thumbs.length));
+            }
+
             function perViewMobile() {
                 const w = window.innerWidth;
                 if (w >= 641) return 5;        // 641–767
@@ -716,28 +719,90 @@
                 else viewport.scrollBy({ left: delta, behavior: 'smooth' });
             }
 
+            // function updateThumbArrows() {
+            //     const eps = 1;
+            //     if (!thumbPrev || !thumbNext) return;
+
+            //     if (isVertical()) {
+            //         const max = Math.max(0, viewport.scrollHeight - viewport.clientHeight - eps);
+            //         thumbPrev.classList.toggle('is-disabled', viewport.scrollTop <= eps);
+            //         thumbNext.classList.toggle('is-disabled', viewport.scrollTop >= max);
+            //     } else {
+            //         const max = Math.max(0, viewport.scrollWidth - viewport.clientWidth - eps);
+            //         thumbPrev.classList.toggle('is-disabled', viewport.scrollLeft <= eps);
+            //         thumbNext.classList.toggle('is-disabled', viewport.scrollLeft >= max);
+            //     }
+            // }
+
             function updateThumbArrows() {
                 const eps = 1;
                 if (!thumbPrev || !thumbNext) return;
 
                 if (isVertical()) {
+                    const noOverflow = viewport.scrollHeight <= viewport.clientHeight + eps;
+                    if (noOverflow) {
+                        thumbPrev.classList.add('is-disabled');
+                        thumbNext.classList.add('is-disabled');
+                        return;
+                    }
                     const max = Math.max(0, viewport.scrollHeight - viewport.clientHeight - eps);
                     thumbPrev.classList.toggle('is-disabled', viewport.scrollTop <= eps);
                     thumbNext.classList.toggle('is-disabled', viewport.scrollTop >= max);
                 } else {
+                    const noOverflow = viewport.scrollWidth <= viewport.clientWidth + eps;
+                    if (noOverflow) {
+                        thumbPrev.classList.add('is-disabled');
+                        thumbNext.classList.add('is-disabled');
+                        return;
+                    }
                     const max = Math.max(0, viewport.scrollWidth - viewport.clientWidth - eps);
                     thumbPrev.classList.toggle('is-disabled', viewport.scrollLeft <= eps);
                     thumbNext.classList.toggle('is-disabled', viewport.scrollLeft >= max);
                 }
             }
 
+
             // (optional) fix viewport height to exactly N rows on desktop
+
+            // function setViewportHeight() {
+            //     if (!isVertical()) { viewport.style.height = ''; return; }
+            //     const { size, gap } = unitSize();
+            //     const h = (ROWS_DESKTOP * size) + (gap * (ROWS_DESKTOP - 1));
+            //     viewport.style.height = `${Math.max(0, h)}px`;
+            // }
+
             function setViewportHeight() {
-                if (!isVertical()) { viewport.style.height = ''; return; }
-                const { size, gap } = unitSize();
-                const h = (ROWS_DESKTOP * size) + (gap * (ROWS_DESKTOP - 1));
+                // Only constrain height in vertical (desktop) mode
+                if (!isVertical()) {
+                    viewport.style.height = '';
+                    viewport.style.overflowY = '';   // let your CSS control on mobile
+                    return;
+                }
+
+                const rows = visibleRows();                // e.g., min(6, thumbs.length)
+                if (rows <= 0) {
+                    viewport.style.height = '0px';
+                    viewport.style.overflowY = 'hidden';
+                    return;
+                }
+
+                const { size, gap } = unitSize();         // measured from DOM
+                // If there’s only 1 thumb, there are 0 gaps; otherwise (rows - 1) gaps
+                const gapsCount = Math.max(0, rows - 1);
+                const h = (rows * size) + (gapsCount * gap);
+
                 viewport.style.height = `${Math.max(0, h)}px`;
+
+                // Only show a vertical scrollbar if there are MORE thumbs than rows
+                if (thumbs.length > rows) {
+                    viewport.style.overflowY = 'auto';
+                } else {
+                    viewport.style.overflowY = 'hidden';
+                    // also reset scrollTop so the top arrow won’t falsely disable/enable
+                    viewport.scrollTop = 0;
+                }
             }
+
 
             // --- selection state shared by everything ---
             let currentIndex = 0;

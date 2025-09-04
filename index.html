@@ -48,7 +48,7 @@
     <!-- END OF ANNOUNCEMENT BAR -->
 
     <!-- START OF HEADER -->
-    <div class="bg-[#d6d2c4] relative">
+    <div class="bg-[#d6d2c4] relative sticky-header">
         <div class="relative h-14 md:h-auto md:pt-4 xl:pt-0 xl:h-[88px] ">
             <!-- START OF LOGO -->
             <div class="flex items-center justify-center z-[3] h-full">
@@ -114,7 +114,7 @@
 
         <!-- START OF MD:NAV -->
         <ul
-            class="hidden md:flex items-center justify-center px-[18px] pb-4 sm:mt-4 xl:px-[30px] xl:mt-0 min-[1440px]:justify-start min-[1440px]:absolute min-[1440px]:px-0 min-[1440px]:pb-0 min-[1440px]:top-1/2 min-[1440px]:left-0 min-[1440px]:-translate-y-1/2">
+            class="hidden header-navs md:flex items-center justify-center px-[18px] pb-4 sm:mt-4 xl:px-[30px] xl:mt-0 min-[1440px]:justify-start min-[1440px]:absolute min-[1440px]:px-0 min-[1440px]:pb-0 min-[1440px]:top-1/2 min-[1440px]:left-0 min-[1440px]:-translate-y-1/2">
             <li id="medium-nav-list-item" class="first:pl-0 medium-nav-list-item px-[18px]  tracking-[1px] text-sm">
                 <a class="uppercase h-8 flex items-center justify-center hover:text-[rgba(33,35,34,0.7)] relative after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-[2px] after:bg-[rgba(33,35,34,0.7)] after:transition-all after:duration-300 after:ease-in-out after:-translate-x-1/2 hover:after:w-full"
                     href="#">Shop All</a>
@@ -328,13 +328,13 @@
                 </form>
             </div>
 
-            <div
+            <!-- <div
                 class="py-[30px] px-[18px] max-w-screen-2xl mx-auto grid grid-cols-1 gap-[30px] sm:grid-cols-[1fr_1fr_2fr]">
                 <div class="">
                     <h4 class="text-sm uppercase mb-1.5 ml-1.5 tracking-[1px] leading-loose font-secondary">Recent
                         searches</h4>
                     <ul>
-                        <li class="text-sm tracking-[1px]">
+                        <li class="text-xs tracking-[1px]">
                             <a class="py-[3px] px-1.5 block w-full rounded hover:bg-[rgba(33,35,34,0.1)] leading-normal font-secondary"
                                 href="#">Shop All</a>
                         </li>
@@ -346,19 +346,19 @@
                     <h4 class="text-sm uppercase mb-1.5 ml-1.5 tracking-[1px] leading-loose font-secondary">Main Menu
                     </h4>
                     <ul>
-                        <li class="text-sm tracking-[1px]">
+                        <li class="text-xs tracking-[1px]">
                             <a class="py-[3px] px-1.5 block w-full rounded hover:bg-[rgba(33,35,34,0.1)] leading-normal font-secondary"
                                 href="#">Shop All</a>
                         </li>
-                        <li class="text-sm tracking-[1px]">
+                        <li class="text-xs tracking-[1px]">
                             <a class="py-[3px] px-1.5 block w-full rounded hover:bg-[rgba(33,35,34,0.1)] leading-normal font-secondary"
                                 href="#">Shop by Category</a>
                         </li>
-                        <li class="text-sm tracking-[1px]">
+                        <li class="text-xs tracking-[1px]">
                             <a class="py-[3px] px-1.5 block w-full rounded hover:bg-[rgba(33,35,34,0.1)] leading-normal font-secondary"
                                 href="#">Bestsellers</a>
                         </li>
-                        <li class="text-sm tracking-[1px]">
+                        <li class="text-xs tracking-[1px]">
                             <a class="py-[3px] px-1.5 block w-full rounded hover:bg-[rgba(33,35,34,0.1)] leading-normal font-secondary"
                                 href="#">About</a>
                         </li>
@@ -366,7 +366,81 @@
                     </ul>
                 </div>
 
+            </div> -->
+
+            <div
+                class="py-[30px] px-[18px] max-w-screen-2xl mx-auto grid grid-cols-1 gap-[30px] sm:grid-cols-[1fr_1fr_2fr]">
+                <div class="">
+                    <h4 class="text-sm uppercase mb-1.5 ml-1.5 tracking-[1px] leading-loose font-secondary">Suggestions
+                    </h4>
+                    <ul>
+                        <li class="text-xs tracking-[1px]">
+                            <a class="py-[3px] px-1.5 block w-full rounded hover:bg-[rgba(33,35,34,0.1)] leading-normal font-secondary"
+                                href="#">Shop All</a>
+                        </li>
+                        <li class="text-xs tracking-[1px]">
+                            <a class="py-[3px] px-1.5 block w-full rounded hover:bg-[rgba(33,35,34,0.1)] leading-normal font-secondary"
+                                href="#">Shop by Category</a>
+                        </li>
+                        <li class="text-xs tracking-[1px]">
+                            <a class="py-[3px] px-1.5 block w-full rounded hover:bg-[rgba(33,35,34,0.1)] leading-normal font-secondary"
+                                href="#">Bestsellers</a>
+                        </li>
+                        <li class="text-xs tracking-[1px]">
+                            <a class="py-[3px] px-1.5 block w-full rounded hover:bg-[rgba(33,35,34,0.1)] leading-normal font-secondary"
+                                href="#">About</a>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div class="">
+                    <h4 class="text-sm uppercase mb-1.5 pl-1.5 tracking-[1px] leading-loose font-secondary">Products</h4>
+                    <ul>
+                        <li class="text-xs tracking-[1px]">
+                            <a class="flex gap-x-[18px] px-1.5 py-[9px] rounded hover:bg-[rgba(33,35,34,0.1)] cursor-pointer">
+                                <img class="w-[72px] h-[72px] block" src="./assets/PAPATUI_single-product_image.png"
+                                    alt="">
+                                <div class="">
+                                    <span
+                                        class="py-[3px]  block w-full leading-normal font-secondary capitalize">Action
+                                        complex men's deodor...</span>
+                                    <span
+                                        class="py-[3px]  block w-full leading-normal font-secondary capitalize">$10.00</span>
+                                </div>
+
+                            </a>
+                        </li>
+                        <li class="text-xs tracking-[1px]">
+                            <a class="flex gap-x-[18px] px-1.5 py-[9px] rounded hover:bg-[rgba(33,35,34,0.1)] cursor-pointer">
+                                <img class="w-[72px] h-[72px] block" src="./assets/PAPATUI_single-product_image.png"
+                                    alt="">
+                                <div class="">
+                                    <span
+                                        class="py-[3px]  block w-full leading-normal font-secondary capitalize">Action
+                                        complex men's deodor...</span>
+                                    <span
+                                        class="py-[3px]  block w-full leading-normal font-secondary capitalize">$10.00</span>
+                                </div>
+
+                            </a>
+                        </li>
+
+
+                    </ul>
+                </div>
+                
+
             </div>
+
+            <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 
+            py-[30px] px-[18px] max-w-screen-2xl w-full">
+                <button
+                    class="py-[9px] px-[18px] mb-6 text-center w-full  bg-[#d6d2c4] text-[#3e4827] uppercase text-sm leading-[30px] tracking-[1px] transition-all duration-200 ease-in-out hover:bg-[#ccc7b5] cursor-pointer md:w-[360px]">Search</button>
+            </div>
+
+
+
         </div>
     </div>
 
@@ -1232,93 +1306,86 @@
 
     <!-- START OF BENEFITS COLUMN SECTION -->
     <section class="px-[18px] mb-6X lg:mb-16X lg:px-[30px] max-w-[1900px] mx-auto bg-[#f3f1ec] pt-[60px] pb-[60px]">
-        <h1 class="text-center text-[24px] text-[#3e4827] uppercase leading-[1.8] relative pb-4 after:content-[''] after:w-9 after:h-[3px] after:bg-[#db864e] after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0 mb-10">What real guys are saying</h1>
+        <h1
+            class="text-center text-[24px] text-[#3e4827] uppercase leading-[1.8] relative pb-4 after:content-[''] after:w-9 after:h-[3px] after:bg-[#db864e] after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0 mb-10">
+            What real guys are saying</h1>
         <div
             class="reviews-container w-full  bg-[#f3f1ec] flex flex-wrap justify-center  items-center gap-x-[48px] gap-y-[30px] md:gap-y-[36px] lg:gap-y-[60px]">
             <div class="review-item max-w-[500px]">
                 <div class="review-star mx-auto mb-3 flex justify-center gap-1">
                     <div>
-                        <img class="w-6 h-auto object-contain" src="./assets/material-symbols_star.png"
-                        alt="">
+                        <img class="w-6 h-auto object-contain" src="./assets/material-symbols_star.png" alt="">
                     </div>
                     <div>
-                        <img class="w-6 h-6 object-contain" src="./assets/material-symbols_star.png"
-                        alt="">
+                        <img class="w-6 h-6 object-contain" src="./assets/material-symbols_star.png" alt="">
                     </div>
                     <div>
-                        <img class="w-6 h-6 object-contain" src="./assets/material-symbols_star.png"
-                        alt="">
+                        <img class="w-6 h-6 object-contain" src="./assets/material-symbols_star.png" alt="">
                     </div>
                     <div>
-                        <img class="w-6 h-6 object-contain" src="./assets/material-symbols_star.png"
-                        alt="">
+                        <img class="w-6 h-6 object-contain" src="./assets/material-symbols_star.png" alt="">
                     </div>
                     <div>
-                        <img class="w-6 h-6 object-contain" src="./assets/material-symbols_star.png"
-                        alt="">
+                        <img class="w-6 h-6 object-contain" src="./assets/material-symbols_star.png" alt="">
                     </div>
                 </div>
                 <div class="text-content text-center mb-3">
-                    <h3 class="text-[18px] leading-[28px] uppercase mb-4 font-bold font-secondary">ENHANCING TATTOO STICK</h3>
-                    <p class="text-base font-secondary leading-[30px] mb-3">My tattoos haven't looked so good!! Even My 30 year old tatts look fresh! Outstanding product!!!</p>
+                    <h3 class="text-[18px] leading-[28px] uppercase mb-4 font-bold font-secondary">ENHANCING TATTOO
+                        STICK</h3>
+                    <p class="text-base font-secondary leading-[30px] mb-3">My tattoos haven't looked so good!! Even My
+                        30 year old tatts look fresh! Outstanding product!!!</p>
                     <p class="text-base font-secondary leading-[30px]">Michael B.</p>
                 </div>
             </div>
             <div class="review-item max-w-[500px]">
                 <div class="review-star mx-auto mb-3 flex justify-center gap-1">
                     <div>
-                        <img class="w-6 h-auto object-contain" src="./assets/material-symbols_star.png"
-                        alt="">
+                        <img class="w-6 h-auto object-contain" src="./assets/material-symbols_star.png" alt="">
                     </div>
                     <div>
-                        <img class="w-6 h-6 object-contain" src="./assets/material-symbols_star.png"
-                        alt="">
+                        <img class="w-6 h-6 object-contain" src="./assets/material-symbols_star.png" alt="">
                     </div>
                     <div>
-                        <img class="w-6 h-6 object-contain" src="./assets/material-symbols_star.png"
-                        alt="">
+                        <img class="w-6 h-6 object-contain" src="./assets/material-symbols_star.png" alt="">
                     </div>
                     <div>
-                        <img class="w-6 h-6 object-contain" src="./assets/material-symbols_star.png"
-                        alt="">
+                        <img class="w-6 h-6 object-contain" src="./assets/material-symbols_star.png" alt="">
                     </div>
                     <div>
-                        <img class="w-6 h-6 object-contain" src="./assets/material-symbols_star.png"
-                        alt="">
+                        <img class="w-6 h-6 object-contain" src="./assets/material-symbols_star.png" alt="">
                     </div>
                 </div>
                 <div class="text-content text-center mb-3">
-                    <h3 class="text-[18px] leading-[28px] uppercase mb-4 font-bold font-secondary">ENHANCING TATTOO STICK</h3>
-                    <p class="text-base font-secondary leading-[30px] mb-3">My tattoos haven't looked so good!! Even My 30 year old tatts look fresh! Outstanding product!!!</p>
+                    <h3 class="text-[18px] leading-[28px] uppercase mb-4 font-bold font-secondary">ENHANCING TATTOO
+                        STICK</h3>
+                    <p class="text-base font-secondary leading-[30px] mb-3">My tattoos haven't looked so good!! Even My
+                        30 year old tatts look fresh! Outstanding product!!!</p>
                     <p class="text-base font-secondary leading-[30px]">Michael B.</p>
                 </div>
             </div>
             <div class="review-item max-w-[500px]">
                 <div class="review-star mx-auto mb-3 flex justify-center gap-1">
                     <div>
-                        <img class="w-6 h-auto object-contain" src="./assets/material-symbols_star.png"
-                        alt="">
+                        <img class="w-6 h-auto object-contain" src="./assets/material-symbols_star.png" alt="">
                     </div>
                     <div>
-                        <img class="w-6 h-6 object-contain" src="./assets/material-symbols_star.png"
-                        alt="">
+                        <img class="w-6 h-6 object-contain" src="./assets/material-symbols_star.png" alt="">
                     </div>
                     <div>
-                        <img class="w-6 h-6 object-contain" src="./assets/material-symbols_star.png"
-                        alt="">
+                        <img class="w-6 h-6 object-contain" src="./assets/material-symbols_star.png" alt="">
                     </div>
                     <div>
-                        <img class="w-6 h-6 object-contain" src="./assets/material-symbols_star.png"
-                        alt="">
+                        <img class="w-6 h-6 object-contain" src="./assets/material-symbols_star.png" alt="">
                     </div>
                     <div>
-                        <img class="w-6 h-6 object-contain" src="./assets/material-symbols_star.png"
-                        alt="">
+                        <img class="w-6 h-6 object-contain" src="./assets/material-symbols_star.png" alt="">
                     </div>
                 </div>
                 <div class="text-content text-center mb-3">
-                    <h3 class="text-[18px] leading-[28px] uppercase mb-4 font-bold font-secondary">ENHANCING TATTOO STICK</h3>
-                    <p class="text-base font-secondary leading-[30px] mb-3">My tattoos haven't looked so good!! Even My 30 year old tatts look fresh! Outstanding product!!!</p>
+                    <h3 class="text-[18px] leading-[28px] uppercase mb-4 font-bold font-secondary">ENHANCING TATTOO
+                        STICK</h3>
+                    <p class="text-base font-secondary leading-[30px] mb-3">My tattoos haven't looked so good!! Even My
+                        30 year old tatts look fresh! Outstanding product!!!</p>
                     <p class="text-base font-secondary leading-[30px]">Michael B.</p>
                 </div>
             </div>
@@ -1327,18 +1394,27 @@
     <!-- END OF BENEFITS COLUMN SECTION -->
 
     <!-- START OF EMAIL CAPTURE SECTION -->
-     <section class="px-[18px] mb-6 lg:mb-16 lg:px-[30px] max-w-[1900px] mx-auto bg-[#f3f1ec] pt-[60px] pb-[60px]">
+    <section class="px-[18px] mb-6 lg:mb-16 lg:px-[30px] max-w-[1900px] mx-auto bg-[#f3f1ec] pt-[60px] pb-[60px]">
         <div class="email-container flex flex-col w-full m-0 p-[10px] min-h-[300px] justify-center items-center">
-            <h2 class="title pt-[10px] font-bold text-center text-[24px] text-[#3e4827] font-secondary">SUBSCRIBE TO GET 10% OFF</h2>
-            <p class="text-content p-[10px] text-center text-[#3e4827] text-sm font-secondary">Get in on exclusive deals like 10% off your first order and more when you subscribe to our mailing list</p>
+            <h2 class="title pt-[10px] font-bold text-center text-[24px] text-[#3e4827] font-secondary">SUBSCRIBE TO GET
+                10% OFF</h2>
+            <p class="text-content p-[10px] text-center text-[#3e4827] text-sm font-secondary">Get in on exclusive deals
+                like 10% off your first order and more when you subscribe to our mailing list</p>
             <form class="email-capture__form py-[10px] w-full max-w-[850px] flex flex-col justify-center items-center">
-                <input class="rounded-none pl-[16px] h-[50px] text-left text-black text-base font-normal tracking-[0px] bg-white border border-[#949596] w-full" type="email" name="email" placeholder="Enter email address">
-                <button class="email-capture__btn w-full uppercase px-[10px] py-[10px] tracking-[1px] leading-[30px] text-[15px] text-[#3e4827] bg-transparent border border-black mt-[20px] hover:bg-[#ccc7b5] cursor-pointer sm:w-fit">Subscribe</button>
+                <input
+                    class="rounded-none pl-[16px] h-[50px] text-left text-black text-base font-normal tracking-[0px] bg-white border border-[#949596] w-full"
+                    type="email" name="email" placeholder="Enter email address">
+                <button
+                    class="email-capture__btn w-full uppercase px-[10px] py-[10px] tracking-[1px] leading-[30px] text-[15px] text-[#3e4827] bg-transparent border border-black mt-[20px] hover:bg-[#ccc7b5] cursor-pointer sm:w-fit">Subscribe</button>
             </form>
-            <p class="email-capture__disclaimer text-[#544e38] text-center text-[12px] py-[20px] px-[10px]">You can unsubscribe from our mailing list at any time. Further details of how we handle your personal information can be found in our <a style="text-decoration: underline; color: #0066cc;" href="#">Privacy&nbsp;Policy</a>.<br>By subscribing you agree to our <a style="text-decoration: underline; color: #0066cc;" href="#">Terms and Conditions</a>.</p>
-            
+            <p class="email-capture__disclaimer text-[#544e38] text-center text-[12px] py-[20px] px-[10px]">You can
+                unsubscribe from our mailing list at any time. Further details of how we handle your personal
+                information can be found in our <a style="text-decoration: underline; color: #0066cc;"
+                    href="#">Privacy&nbsp;Policy</a>.<br>By subscribing you agree to our <a
+                    style="text-decoration: underline; color: #0066cc;" href="#">Terms and Conditions</a>.</p>
+
         </div>
-     </section>
+    </section>
     <!-- END OF EMAIL CAPTURE SECTION -->
 
 

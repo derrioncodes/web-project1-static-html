@@ -2002,6 +2002,11 @@
       gap: calc(var(--spacing) * 8);
     }
   }
+  .md\:gap-x-\[30px\] {
+    @media (width >= 48rem) {
+      column-gap: 30px;
+    }
+  }
   .md\:gap-y-\[36px\] {
     @media (width >= 48rem) {
       row-gap: 36px;

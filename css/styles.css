@@ -394,9 +394,6 @@
   .mb-1\.5 {
     margin-bottom: calc(var(--spacing) * 1.5);
   }
-  .mb-2 {
-    margin-bottom: calc(var(--spacing) * 2);
-  }
   .mb-3 {
     margin-bottom: calc(var(--spacing) * 3);
   }
@@ -420,9 +417,6 @@
   }
   .mb-16 {
     margin-bottom: calc(var(--spacing) * 16);
-  }
-  .mb-20 {
-    margin-bottom: calc(var(--spacing) * 20);
   }
   .mb-\[0\.75em\] {
     margin-bottom: 0.75em;
@@ -725,9 +719,6 @@
   .justify-center {
     justify-content: center;
   }
-  .justify-end {
-    justify-content: flex-end;
-  }
   .justify-start {
     justify-content: flex-start;
   }
@@ -853,29 +844,11 @@
   .border-\[\#949596\] {
     border-color: #949596;
   }
-  .border-\[\#949596\]\/2 {
-    border-color: color-mix(in oklab, #949596 2%, transparent);
-  }
-  .border-\[\#949596\]\/8 {
-    border-color: color-mix(in oklab, #949596 8%, transparent);
-  }
-  .border-\[\#949596\]\/20 {
-    border-color: color-mix(in oklab, #949596 20%, transparent);
-  }
   .border-\[\#949596\]\/50 {
     border-color: color-mix(in oklab, #949596 50%, transparent);
   }
-  .border-\[\#949596\]\/80 {
-    border-color: color-mix(in oklab, #949596 80%, transparent);
-  }
   .border-\[\#db864e\] {
     border-color: #db864e;
-  }
-  .border-\[rgba\(33\,35\,34\)\]\/2 {
-    border-color: color-mix(in oklab, rgba(33,35,34) 2%, transparent);
-  }
-  .border-\[rgba\(33\,35\,34\)\]\/8 {
-    border-color: color-mix(in oklab, rgba(33,35,34) 8%, transparent);
   }
   .border-\[rgba\(33\,35\,34\,0\.2\)\] {
     border-color: rgba(33,35,34,0.2);
@@ -1708,13 +1681,6 @@
     &:hover {
       @media (hover: hover) {
         opacity: 70%;
-      }
-    }
-  }
-  .hover\:opacity-80 {
-    &:hover {
-      @media (hover: hover) {
-        opacity: 80%;
       }
     }
   }

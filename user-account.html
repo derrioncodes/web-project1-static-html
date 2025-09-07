@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="assets/extra-styles.css">
+
+    <!-- GLIDE JS  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
+
+
+    <!-- FONT FAMILY - ROBOTO -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- FONT FAMILY - ROBOTO MONO -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- START OF ANNOUNCEMENT BAR -->
+    <div class="announcement__banner bg-[#d6d2c4] border-b border-[rgba(33,35,34,0.2)] text-center flex items-center">
+        <p class="mx-auto px-6 py-3 text-[11px] md:text-sm">FREE SHIPPING ON ORDERS $40+ <span class="ml-0.5"><a
+                    class="underline text-[#212322] opacity-70 hover:opacity-100 transition-opacity duration-200"
+                    href="#">
+                    SHOP NOW
+                </a></span></p>
+        <div class="close-announcement-banner px-2 py-3 cursor-pointer">
+            <!-- X ICON -->
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="size-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+            </svg>
+        </div>
+    </div>
+    <!-- END OF ANNOUNCEMENT BAR -->
+
+    <!-- START OF HEADER -->
+    <div class="bg-[#d6d2c4] relative">
+        <div class="relative h-14 md:h-auto md:pt-4 xl:pt-0 xl:h-[88px] ">
+            <!-- START OF LOGO -->
+            <div class="flex items-center justify-center z-[3] h-full">
+                <!-- <h1 class="mx-auto text-center text-2xl md:text-3xl font-bold">PAPATUI</h1> -->
+                <a class="block" href="#">
+                    <img class="mx-auto h-9 w-[150px] object-contain md:h-13 md:w-full"
+                        src="./assets/Papatui_Header_Logo.png" alt="" srcset="">
+                </a>
+
+            </div>
+            <!-- END OF LOGO -->
+
+            <div id="mobile-nav-button_open"
+                class="absolute top-0 left-[18px] h-full flex items-center cursor-pointer z-[4] md:hidden">
+                <!-- BARS ICON -->
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+
+            </div>
+
+
+
+            <div class="absolute top-0 right-[18px] h-full flex items-center gap-3  z-[4] xl:right-[30px] md:gap-8">
+                <a href="#" class="hidden items-center relative cursor-pointer md:flex">
+
+                    <!-- USER ICON -->
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-5">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                    </svg>
+
+                </a>
+                <a href="#" class=" flex items-center relative cursor-pointer">
+                    <!-- CART ICON -->
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-5">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                    </svg>
+                    <div class="relative">
+                        <span
+                            class="absolute -top-[12px] -right-[5px] min-w-[14px] leading-[12px] text-[9px] px-[3px] py-[1px] text-center text-white tracking-[0] rounded-[15px] bg-[#212322]">
+                            1
+                        </span>
+                    </div>
+                </a>
+                <div class="nav-search-button  flex items-center cursor-pointer">
+                    <!-- SEARCH ICON -->
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-5">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                    </svg>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- START OF MD:NAV -->
+        <ul
+            class="hidden md:flex items-center justify-center px-[18px] pb-4 sm:mt-4 xl:px-[30px] xl:mt-0 min-[1440px]:justify-start min-[1440px]:absolute min-[1440px]:px-0 min-[1440px]:pb-0 min-[1440px]:top-1/2 min-[1440px]:left-0 min-[1440px]:-translate-y-1/2">
+            <li id="medium-nav-list-item" class="first:pl-0 medium-nav-list-item px-[18px]  tracking-[1px] text-sm">
+                <a class="uppercase h-8 flex items-center justify-center hover:text-[rgba(33,35,34,0.7)] relative after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-[2px] after:bg-[rgba(33,35,34,0.7)] after:transition-all after:duration-300 after:ease-in-out after:-translate-x-1/2 hover:after:w-full"
+                    href="#">Shop All</a>
+            </li>
+            <li id="medium-nav-list-item" class="first:pl-0  medium-nav-list-item px-[18px]  tracking-[1px] text-sm">
+                <a class="uppercase h-8 flex items-center justify-center hover:text-[rgba(33,35,34,0.7)] relative after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-[2px] after:bg-[rgba(33,35,34,0.7)] after:transition-all after:duration-300 after:ease-in-out after:-translate-x-1/2 hover:after:w-full"
+                    href="#">
+                    Shop catagories
+                    <!-- DOWN ARROW ICON -->
+                    <span class="block pl-1.5">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-3.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                        </svg>
+
+                    </span>
+                </a>
+                <ul id="medium-subnav-container"
+                    class="medium-subnav-container hidden opacity-0 transition-opacity duration-100 ease-in-out absolute bg-[#d6d2c4] px-[18px] py-[12px] min-w-[160px] max-w-[270px] w-max shadow-[0_8px_24px_rgba(33,35,34,0.08)]">
+                    <li class="text-[rgba(33,35,34,0.7)] leading-[1.5] w-full  text-xs ">
+                        <a class="block w-full px-[0.4em] py-[0.5em] rounded hover:bg-[rgba(33,35,34,0.1)]" href="">Body
+                            + Hair</a>
+                    </li>
+                    <li class="text-[rgba(33,35,34,0.7)] leading-[1.5] w-full  text-xs ">
+                        <a class="block w-full px-[0.4em] py-[0.5em] rounded hover:bg-[rgba(33,35,34,0.1)]"
+                            href="">Face</a>
+                    </li>
+                    <li class="text-[rgba(33,35,34,0.7)] leading-[1.5] w-full  text-xs ">
+                        <a class="block w-full px-[0.4em] py-[0.5em] rounded hover:bg-[rgba(33,35,34,0.1)]"
+                            href="">Tattoo</a>
+                    </li>
+                    <li class="text-[rgba(33,35,34,0.7)] leading-[1.5] w-full  text-xs ">
+                        <a class="block w-full px-[0.4em] py-[0.5em] rounded hover:bg-[rgba(33,35,34,0.1)]"
+                            href="">Antiperspirant + Deodorant</a>
+                    </li>
+                    <li class="text-[rgba(33,35,34,0.7)] leading-[1.5] w-full  text-xs ">
+                        <a class="block w-full px-[0.4em] py-[0.5em] rounded hover:bg-[rgba(33,35,34,0.1)]"
+                            href="">Bundles</a>
+                    </li>
+                </ul>
+            </li>
+            <li id="medium-nav-list-item" class="first:pl-0 medium-nav-list-item px-[18px] tracking-[1px] text-sm">
+                <a class="uppercase h-8 flex items-center justify-center hover:text-[rgba(33,35,34,0.7)] relative after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-[2px] after:bg-[rgba(33,35,34,0.7)] after:transition-all after:duration-300 after:ease-in-out after:-translate-x-1/2 hover:after:w-full"
+                    href="#">Best sellers</a>
+            </li>
+            <li id="medium-nav-list-item" class="first:pl-0 medium-nav-list-item px-[18px]  tracking-[1px] text-sm">
+                <a class="uppercase h-8 flex items-center justify-center hover:text-[rgba(33,35,34,0.7)] relative after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-[2px] after:bg-[rgba(33,35,34,0.7)] after:transition-all after:duration-300 after:ease-in-out after:-translate-x-1/2 hover:after:w-full"
+                    href="#">About</a>
+            </li>
+        </ul>
+        <!-- END OF MD:NAV -->
+
+
+    </div>
+    <!-- END OF HEADER -->
+
+    <!-- START OF MOBILE NAV -->
+    <div
+        class="mobile__nav__drawer__bg fixed top-0 left-0 w-full h-full z-[1042] bg-[#0b0b0b66] opacity-0 invisible transition-opacity duration-500 ease-in-out">
+        <div
+            class="mobile__nav__drawer__open fixed top-0 left-[-100%] z-[1043] h-full w-[480px] max-w-[calc(100vw-24px)] overflow-hidden overflow-y-auto bg-white pb-[120px] transition-[left] duration-500 ease-in-out outline-none">
+            <!-- START OF MOBILE HEADER -->
+            <div class="h-[72px] flex justify-between items-center">
+                <div id="mobile-nav-button-close" class="ml-3 w-fit">
+                    <!-- X ICON -->
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-8">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                    </svg>
+                </div>
+
+                <div class="mr-3">
+                    <a class="flex items-center pt-[18px] pb-[18px] pl-[18px]">
+                        <!-- USER ICON -->
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-5">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                        </svg>
+
+                        <span class="pl-1.5 text-xs font-secondary">Log in</span>
+                    </a>
+
+                </div>
+            </div>
+            <!-- END OF MOBILE HEADER -->
+            <!-- START OF MOBILE MENU -->
+            <ul class="ml-4.5 mr-3 divide-y divide-[rgba(33,35,34,0.2)]">
+                <li class="mobile-menu-list-item">
+                    <a class="text-xl py-7 block tracking-[1px] font-secondary">Shop All</a>
+                </li>
+                <li class="mobile-menu-list-item">
+                    <a
+                        class="mobile-menu-list-item__link text-xl py-7 tracking-[1px] flex items-center justify-between font-secondary">
+                        <span class="block">Shop by Category</span>
+                        <!-- RIGHT ARROW ICON -->
+                        <span class="block"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                            </svg>
+                        </span>
+                    </a>
+                    <div
+                        class="mobile-nav__subcontainer absolute top-0 bottom-0 right-[-100%] w-full h-full bg-white z-[1044] overflow-y-scroll pb-[25px] transition-[right] duration-500 ease-in-out">
+                        <div class="relative">
+                            <div class="relative">
+                                <img class="h-60 w-full object-cover"
+                                    src="./assets/mobile-secondary-subnav-banner_completefacecare_scent_uncented__01.png"
+                                    alt="">
+                                <div
+                                    class="mobile-subnav__close-btn absolute top-[24px] left-[8px] cursor-pointer z-[1046]">
+                                    <!-- X ICON -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="3" stroke="#ffffff" class="size-8">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                                    </svg>
+                                </div>
+
+                            </div>
+
+
+                            <div class="bg-white">
+                                <div
+                                    class="mobile-subnav__back-btn text-xl py-7 tracking-[1px] flex items-center justify-center relative ml-2 mr-4.5">
+                                    <span class="block absolute left-1"><svg xmlns="http://www.w3.org/2000/svg"
+                                            fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                            class="size-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M15.75 19.5 8.25 12l7.5-7.5" />
+                                        </svg>
+
+                                    </span>
+                                    <span class="block text-base font-secondary">Shop by Category</span>
+
+                                </div>
+                                <ul
+                                    class="mx-4.5 divide-y divide-[rgba(33,35,34,0.2)] border-t border-[rgba(33,35,34,0.2)]">
+                                    <li>
+                                        <a class="text-xl py-7 block tracking-[1px] font-secondary">Body + Hair Care</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-xl py-7 block tracking-[1px] font-secondary">Face Care</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-xl py-7 block tracking-[1px] font-secondary">Tattoo Care</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-xl py-7 block tracking-[1px] font-secondary">Antiperspirant +
+                                            Deodarant</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-xl py-7 block tracking-[1px] font-secondary">Bundles</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </li>
+                <li class="mobile-menu-list-item">
+                    <a class="mobile-menu-list-item__link text-xl py-7 block tracking-[1px] font-secondary">Best
+                        Sellers</a>
+                </li>
+                <li class="mobile-menu-list-item">
+                    <a class="mobile-menu-list-item__link text-xl py-7 block tracking-[1px] font-secondary">About
+                        PAPATUI<sup>&trade;</sup></a>
+                </li>
+            </ul>
+            <!-- END OF MOBILE MENU -->
+            <!-- START OF MOBILE SOCIALS -->
+            <div class="ml-4.5 mr-3 flex items-center gap-2">
+                <a class="w-7 h-7 flex items-center justify-center">
+                    <img class="w-5 h-5" src="./assets/papatui_instagram.png" alt="">
+                </a>
+                <a class="w-7 h-7 flex items-center justify-center">
+                    <img class="w-5 h-5" src="./assets/papatui-tiktok.png" alt="">
+                </a>
+            </div>
+            <!-- END OF MOBILE SOCIALS -->
+        </div>
+    </div>
+    <!-- END OF MOBILE NAV -->
+
+    <!-- START OF SEARCH SECTION -->
+    <div
+        class="search-overlay absolute top-0 left-0 w-full h-full z-[1042] bg-[#0b0b0b66] opacity-0 invisible transition-opacity duration-500 ease-in-out">
+        <div
+            class="search-panel absolute top-0 left-0 w-full h-full z-[1045] overflow-hidden overflow-y-auto bg-white transition-[top] duration-500 ease-in-out  sm:max-h-[600px]">
+            <div class="border-b border-b-[rgba(33,33,33,0.2)] px-[18px] ">
+                <form class="flex justify-between items-center gap-5 h-[72px] max-w-screen-2xl mx-auto">
+                    <button>
+                        <!-- SEARCH ICON -->
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-5">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                        </svg>
+
+                    </button>
+                    <input
+                        class="text-base tracking-[1px] block w-full outline-0 placeholder:text-[rgba(33,33,33,0.5)] font-secondary placeholder:tracking-[1px]"
+                        type="text" placeholder="Search our store..." />
+                    <div class="search-close-button cursor-pointer">
+                        <!-- X ICON -->
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-8">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                        </svg>
+                    </div>
+                </form>
+            </div>
+
+            <div
+                class="py-[30px] px-[18px] max-w-screen-2xl mx-auto grid grid-cols-1 gap-[30px] sm:grid-cols-[1fr_1fr_2fr]">
+                <div class="">
+                    <h4 class="text-sm uppercase mb-1.5 ml-1.5 tracking-[1px] leading-loose font-secondary">Recent
+                        searches</h4>
+                    <ul>
+                        <li class="text-sm tracking-[1px]">
+                            <a class="py-[3px] px-1.5 block w-full rounded hover:bg-[rgba(33,35,34,0.1)] leading-normal font-secondary"
+                                href="#">Shop All</a>
+                        </li>
+
+
+                    </ul>
+                </div>
+                <div class="">
+                    <h4 class="text-sm uppercase mb-1.5 ml-1.5 tracking-[1px] leading-loose font-secondary">Main Menu
+                    </h4>
+                    <ul>
+                        <li class="text-sm tracking-[1px]">
+                            <a class="py-[3px] px-1.5 block w-full rounded hover:bg-[rgba(33,35,34,0.1)] leading-normal font-secondary"
+                                href="#">Shop All</a>
+                        </li>
+                        <li class="text-sm tracking-[1px]">
+                            <a class="py-[3px] px-1.5 block w-full rounded hover:bg-[rgba(33,35,34,0.1)] leading-normal font-secondary"
+                                href="#">Shop by Category</a>
+                        </li>
+                        <li class="text-sm tracking-[1px]">
+                            <a class="py-[3px] px-1.5 block w-full rounded hover:bg-[rgba(33,35,34,0.1)] leading-normal font-secondary"
+                                href="#">Bestsellers</a>
+                        </li>
+                        <li class="text-sm tracking-[1px]">
+                            <a class="py-[3px] px-1.5 block w-full rounded hover:bg-[rgba(33,35,34,0.1)] leading-normal font-secondary"
+                                href="#">About</a>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- START OF ACCOUNT LOGIN -->
+    <!-- <section class="px-[18px] mb-6 lg:mb-16 lg:px-[30px] max-w-[1900px] mx-auto">
+        <div id="login-section" class="login-container">
+            <div
+                class="page-title text-center mt-[30px] mb-[24px] max-w-2xl mx-auto flex flex-col justify-center items-center">
+                <h1
+                    class="text-[23px] font-normal text-[#212322] uppercase leading-[1.8] relative pb-3 after:content-[''] after:w-9 after:h-[3px] after:bg-[#db864e] after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0">
+                    Login</h1>
+            </div>
+
+            <form class="max-w-[680px] mx-auto" action="">
+                <div class="mb-4">
+                    <label for="email" class="block text-base leading-6 font-secondary mb-1">Email</label>
+                    <input
+                        class="rounded-none p-3 h-[48px]  font-secondary text-left text-black text-base font-normal tracking-[0px] bg-white border border-[#949596]/50 w-full focus:outline-none"
+                        type="email" name="email">
+                </div>
+                <div class="mb-4">
+                    <label for="password" class="block text-base leading-6 font-secondary mb-1">Password</label>
+                    <input
+                        class="rounded-none p-3 h-[48px]  font-secondary text-left text-black text-base font-normal tracking-[0px] bg-white border border-[#949596]/50 w-full focus:outline-none"
+                        type="password" name="password">
+                </div>
+                <div class="flex mb-4 md:justify-end">
+                    <p
+                        class="w-fit font-secondary mb-3 text-right text-sm opacity-100 hover:opacity-70 transition-opacity duration-200 cursor-pointer">
+                        Forgot your password?</p>
+                </div>
+                <div class="account-buttons flex flex-col gap-4 md:flex-row md:gap-6 ">
+                    <button
+                        class="py-[9px] px-[30px] text-center w-full bg-[#d6d2c4] text-[#3e4827] uppercase text-sm tracking-[1px] leading-[30px] transition-all duration-200 ease-in-out hover:bg-[#ccc7b5] cursor-pointer md:w-fit">Sign
+                        in</button>
+                    <button
+                        class="text-center w-full bg-[#ffffff]  uppercase text-sm  tracking-[1px] leading-[30px] opacity-100 hover:opacity-70 transition-opacity duration-200  cursor-pointer md:w-fit">Create
+                        account</button>
+                </div>
+
+            </form>
+        </div>
+        <div id="forgot-section" class="reset-password-container">
+            <div
+                class="page-title text-center mt-[30px] mb-[24px] max-w-2xl mx-auto flex flex-col justify-center items-center">
+                <h1
+                    class="text-[23px] font-normal text-[#212322] uppercase leading-[1.8] relative pb-3 after:content-[''] after:w-9 after:h-[3px] after:bg-[#db864e] after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0">
+                    Reset your password</h1>
+            </div>
+
+            <form class="max-w-[680px] mx-auto" action="">
+                <div class="mb-4">
+                    <label for="email" class="block text-base leading-6 font-secondary mb-1">Email</label>
+                    <input
+                        class="rounded-none p-3 h-[48px]  font-secondary text-left text-black text-base font-normal tracking-[0px] bg-white border border-[#949596]/50 w-full focus:outline-none"
+                        type="email" name="email">
+                </div>
+
+                <div class="flex mb-4">
+                    <p
+                        class="w-fit font-secondary mb-3 text-right text-sm opacity-100 hover:opacity-70 transition-opacity duration-200 cursor-pointer">
+                        We will send you an email to reset your password.</p>
+                </div>
+                <div class="account-buttons flex flex-col gap-4 md:flex-row md:gap-6 ">
+                    <button
+                        class="py-[9px] px-[30px] text-center w-full bg-[#d6d2c4] text-[#3e4827] uppercase text-sm tracking-[1px] leading-[30px] transition-all duration-200 ease-in-out hover:bg-[#ccc7b5] cursor-pointer md:w-fit">Submit</button>
+                    <button id="back-link"
+                        class="text-center w-full bg-[#ffffff]  uppercase text-sm  tracking-[1px] leading-[30px] opacity-100 hover:opacity-70 transition-opacity duration-200  cursor-pointer md:w-fit">Cancel</button>
+                </div>
+
+            </form>
+        </div>
+
+    </section> -->
+    <!-- END OF SINGLE PRODUCT -->
+
+    <section class="px-[18px] mb-16 lg:px-[30px] max-w-[1900px] mx-auto">
+        <div
+            class="page-title text-center mt-[30px] mb-[24px] max-w-2xl mx-auto flex flex-col justify-center items-center">
+            <h1
+                class="text-[23px] font-normal text-[#212322] uppercase leading-[1.8] relative pb-3 after:content-[''] after:w-9 after:h-[3px] after:bg-[#db864e] after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0">
+                My account
+            </h1>
+        </div>
+        <a
+            class="font-secondary flex justify-center text-sm uppercase opacity-100 hover:opacity-70 transition-opacity duration-200 cursor-pointer mb-9">Log
+            out</a>
+        <div class="account-details-container flex flex-col justify-between md:flex-row">
+            <div class="order-history md:w-2/3">
+                <h2 class="uppercase text-[#3e4827] font-normal text-base md:text-[19px] leading-relaxed mb-4">Order
+                    history</h2>
+
+
+                <div class="order-details md:mr-[30px] mb-[30px]">
+
+                    <!-- MOBILE: stacked card view -->
+                    <ul class="sm:hidden space-y-3">
+                        <li class="border border-gray-200 rounded-sm p-4">
+                            <div class="flex items-center justify-between">
+                                <a href="#"
+                                    class="font-secondary flex items-center gap-1 opacity-100 hover:opacity-70 transition-opacity duration-200">
+                                    #FRD0402-34415
+                                    <!-- RIGHT ARROW ICON -->
+                                    <span class="block">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </span>
+                                </a>
+                                <div class="text-sm text-gray-500">$16.73</div>
+                            </div>
+
+                            <div class="mt-3 grid grid-cols-2 gap-y-2 text-sm font-secondary">
+                                <span class="text-gray-500">Date</span>
+                                <span>Sep 7, 2025</span>
+
+                                <span class="text-gray-500">Payment</span>
+                                <span>Paid</span>
+
+                                <span class="text-gray-500">Fulfillment</span>
+                                <span>Unfulfilled</span>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                    <!-- DESKTOP: table view -->
+                    <div class="hidden sm:block overflow-x-auto">
+                        <table class="min-w-full border-collapse border border-gray-200 text-left text-sm">
+                            <thead class="bg-gray-50 border-b border-gray-200">
+                                <tr>
+                                    <th class="px-4 py-2 font-bold font-secondary">Order</th>
+                                    <th class="px-4 py-2 font-bold font-secondary">Date</th>
+                                    <th class="px-4 py-2 font-bold font-secondary">Payment Status</th>
+                                    <th class="px-4 py-2 font-bold font-secondary">Fulfillment Status</th>
+                                    <th class="px-4 py-2 font-bold font-secondary">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-t border-gray-200">
+                                    <td class="px-4 py-2 font-secondary">
+                                        <a href="#"
+                                            class="flex items-center gap-1 opacity-100 hover:opacity-70 transition-opacity duration-200 cursor-pointer">
+                                            #FRD0402-34415
+                                            <!-- RIGHT ARROW ICON -->
+                                            <span class="block">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                                </svg>
+                                            </span>
+                                        </a>
+                                    </td>
+                                    <td class="px-4 py-2 font-secondary">Sep 7, 2025</td>
+                                    <td class="px-4 py-2 font-secondary">Paid</td>
+                                    <td class="px-4 py-2 font-secondary">Unfulfilled</td>
+                                    <td class="px-4 py-2 font-secondary">$16.73</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+
+                <!-- <div class="no-orders">
+                    <p class="font-secondary text-sm leading-[30px] mb-4">You haven't placed any orders yet.</p>
+                </div> -->
+            </div>
+            <div class="account-details md:w-1/3">
+                <h2 class="uppercase text-[#3e4827] font-normal text-base md:text-[19px] leading-relaxed mb-4">Account
+                    details</h2>
+                <div class="user-details mb-6">
+                    <p class="font-secondary text-sm md:text-base mb-2">
+                        Derrion Hall
+                    </p>
+                    <p class="font-secondary text-sm md:text-base mb-2">1000 North Bigville Blvd </p>
+                    <p class="font-secondary text-sm md:text-base mb-2">Unit 2013 </p>
+                    <p class="font-secondary text-sm md:text-base mb-2">North Pippen GA 84009 </p>
+                    <p class="font-secondary text-sm md:text-base mb-2">United Sates</p>
+                </div>
+                <div>
+                    <a
+                        class="py-[14px] px-[30px] text-center w-full bg-[#f0f0f0] uppercase text-xs md:text-sm tracking-[1px] leading-[30px] transition-all duration-200 ease-in-out hover:bg-[#e5e5e5] cursor-pointer md:w-fit">
+                        View addresses (0)
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#3e4827] mt-">
+        <div class="footer-container pt-[60px] pb-[0px] px-[0px] lg:flex lg:pb-[30px] lg:px-[18px]">
+            <div class="footer_logo w-full mb-[30px] pl-[30px] md:w-1/2 lg:w-1/4">
+                <img src="./assets/Papatui_Flame_Logo_1a526e18-3e67-45a5-a57e-51c3cb7674d2.png" alt="">
+            </div>
+            <div class="footer-nav w-full mb-[30px] pl-[30px] text-[#f3f2ed] md:w-1/2 lg:w-1/4">
+                <h5 class="footer-nav__title uppercase mb-[12px] text-[15px] leading-[1.9]  font-semibold">About</h5>
+                <ul class="footer-nav__items mb-4">
+                    <li class="footer-nav__item mb-[10px] text-[14px] font-secondary ">
+                        <a href="#" class="footer-nav__link text-[#fffffccf] hover:text-white">About Us</a>
+                    </li>
+                    <li class="footer-nav__item mb-[10px] text-[14px] font-secondary ">
+                        <a href="#" class="footer-nav__link text-[#fffffccf] hover:text-white">PAPATUI<sup>&trade;</sup>
+                            Cares</a>
+                    </li>
+                    <li class="footer-nav__item mb-[10px] text-[14px] font-secondary ">
+                        <a href="#" class="footer-nav__link text-[#fffffccf] hover:text-white">Store Locator</a>
+                    </li>
+                    <li class="footer-nav__item mb-[10px] text-[14px] font-secondary ">
+                        <a href="#" class="footer-nav__link text-[#fffffccf] hover:text-white">FAQs</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-nav w-full mb-[30px] pl-[30px] text-[#f3f2ed] md:w-1/2 lg:w-1/4">
+                <h5 class="footer-nav__title uppercase mb-[12px] text-[15px] leading-[1.9]  font-semibold">SUPPORT &
+                    CONTACT</h5>
+                <ul class="footer-nav__items mb-4">
+                    <li class="footer-nav__item mb-[10px] text-[14px] font-secondary ">
+                        <a href="#" class="footer-nav__link text-[#fffffccf] hover:text-white">Contact Us</a>
+                    </li>
+                    <li class="footer-nav__item mb-[10px] text-[14px] font-secondary ">
+                        <a href="#" class="footer-nav__link text-[#fffffccf] hover:text-white">Privacy</a>
+                    </li>
+                    <li class="footer-nav__item mb-[10px] text-[14px] font-secondary ">
+                        <a href="#" class="footer-nav__link text-[#fffffccf] hover:text-white">Terms of Use</a>
+                    </li>
+                    <li class="footer-nav__item mb-[10px] text-[14px]  font-secondary ">
+                        <a href="#" class="footer-nav__link text-[#fffffccf] hover:text-white">Accessbility
+                            Statement</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-nav social w-full mb-[0px] pl-[30px] text-[#f3f2ed] md:w-1/2 lg:w-1/4">
+                <h5 class="footer-nav__title uppercase mb-[12px] text-[15px] leading-[1.9]  font-semibold">Social</h5>
+                <ul class="footer-nav__items social__items mb-4 flex gap-[10px] -ml-[12px]">
+                    <li class="footer-nav__item social__item w-[40px] h-[40px]">
+                        <a class="footer-nav__link social-icon w-[20px] h-[20px] mx-auto block" href="#">
+                            <img src="/assets/papatui_footer_white_instagram.png" alt="" srcset="" />
+                        </a>
+                    </li>
+                    <li class="footer-nav__item social__item w-[40px] h-[40px]">
+                        <a class="footer-nav__link social-icon w-[20px] h-[20px] mx-auto block" href="#">
+                            <img src="/assets/papatui_footer_white_tiktok.png" alt="" />
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <div
+            class="footer__bottom border-t border-t-[rgba(255,255,255,0.2)] py-[12px] px-[30px] min-h-[66px] flex justify-center items-center lg:justify-end">
+            <div class="footer-copyright__text text-[0.8rem] text-[#fffffccf]">&copy;
+                <script>document.write(new Date().getFullYear());</script>, PAPATUI
+            </div>
+        </div>
+
+    </footer>
+
+
+
+</body>
+
+</html>

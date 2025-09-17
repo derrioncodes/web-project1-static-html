@@ -85,7 +85,7 @@
                     </svg>
 
                 </a>
-                <a href="#" class=" flex items-center relative cursor-pointer">
+                <a class=" flex items-center relative cursor-pointer" data-cart-open>
                     <!-- CART ICON -->
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="size-5">
@@ -395,15 +395,16 @@
                 </div>
 
                 <div class="">
-                    <h4 class="text-sm uppercase mb-1.5 pl-1.5 tracking-[1px] leading-loose font-secondary">Products</h4>
+                    <h4 class="text-sm uppercase mb-1.5 pl-1.5 tracking-[1px] leading-loose font-secondary">Products
+                    </h4>
                     <ul>
                         <li class="text-xs tracking-[1px]">
-                            <a class="flex gap-x-[18px] px-1.5 py-[9px] rounded hover:bg-[rgba(33,35,34,0.1)] cursor-pointer">
+                            <a
+                                class="flex gap-x-[18px] px-1.5 py-[9px] rounded hover:bg-[rgba(33,35,34,0.1)] cursor-pointer">
                                 <img class="w-[72px] h-[72px] block" src="./assets/PAPATUI_single-product_image.png"
                                     alt="">
                                 <div class="">
-                                    <span
-                                        class="py-[3px]  block w-full leading-normal font-secondary capitalize">Action
+                                    <span class="py-[3px]  block w-full leading-normal font-secondary capitalize">Action
                                         complex men's deodor...</span>
                                     <span
                                         class="py-[3px]  block w-full leading-normal font-secondary capitalize">$10.00</span>
@@ -412,12 +413,12 @@
                             </a>
                         </li>
                         <li class="text-xs tracking-[1px]">
-                            <a class="flex gap-x-[18px] px-1.5 py-[9px] rounded hover:bg-[rgba(33,35,34,0.1)] cursor-pointer">
+                            <a
+                                class="flex gap-x-[18px] px-1.5 py-[9px] rounded hover:bg-[rgba(33,35,34,0.1)] cursor-pointer">
                                 <img class="w-[72px] h-[72px] block" src="./assets/PAPATUI_single-product_image.png"
                                     alt="">
                                 <div class="">
-                                    <span
-                                        class="py-[3px]  block w-full leading-normal font-secondary capitalize">Action
+                                    <span class="py-[3px]  block w-full leading-normal font-secondary capitalize">Action
                                         complex men's deodor...</span>
                                     <span
                                         class="py-[3px]  block w-full leading-normal font-secondary capitalize">$10.00</span>
@@ -429,7 +430,7 @@
 
                     </ul>
                 </div>
-                
+
 
             </div>
 
@@ -443,6 +444,287 @@
 
         </div>
     </div>
+
+    <!-- CART DRAWER -->
+    <!-- Trigger(s) -->
+    <button class="px-4 py-2 rounded-lg bg-[#212322] text-white" data-cart-open>
+        Open cart
+    </button>
+
+    <!-- Overlay + Drawer -->
+    <div id="cart-root" class="fixed inset-0 z-50 hidden" aria-hidden="true">
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-black/30 opacity-0 transition-opacity duration-300" data-cart-overlay></div>
+
+        <!-- Drawer -->
+        <aside class="absolute right-0 top-0 h-full w-full sm:max-w-md bg-white shadow-xl
+                   translate-x-full transition-transform duration-300 flex flex-col" role="dialog" aria-modal="true"
+            aria-labelledby="cart-title" data-cart-drawer>
+
+            <!-- Header -->
+            <div class="px-5 py-4 border-b border-[rgba(33,35,34,0.2)] flex items-center justify-between">
+                <h2 id="cart-title" class="text-base font-medium uppercase">Your cart</h2>
+                <button class="p-2 -mr-2 hover:opacity-70 cursor-pointer" data-cart-close aria-label="Close cart">
+                    <svg viewBox="0 0 24 24" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Items scroll area -->
+            <div class="flex-1 overflow-y-auto px-5 py-5" data-cart-items>
+                <!-- Cart Item -->
+                <div class="cart-drawer-item flex justify-between gap-5 mb-[30px] pb-[30px] border-b border-[rgba(33,35,34,0.2)] last:border-b-0 last:mb-0"
+                    data-item data-price="10.00">
+                    <div class="flex gap-5">
+                        <div>
+                            <a href="#">
+                                <img class="w-[clamp(80px,10vw,120px)] object-contain transition-opacity duration-200 hover:opacity-70"
+                                    src="./assets/TattooCareBundle_scent_uncented__01.png" alt="Awakening Eye Gel">
+                            </a>
+                        </div>
+
+                        <div class="cart-drawer_product-details">
+                            <div class="product-name mb-3.5">
+                                <a href="#"
+                                    class="font-secondary text-base text-[#3e4827] hover:text-[rgba(62,72,39,0.7)] transition-colors duration-200 font-normal">
+                                    Awakening Eye Gel
+                                </a>
+                                <div class="font-secondary text-[#535353] text-xs mt-0.5">2oz / Sandalwood</div>
+                            </div>
+
+                            <div
+                                class="cart-drawer_item__quantity flex flex-wrap gap-[12px] items-center justify-start w-full">
+                                <div class="item__quantity__input flex border border-[rgba(33,35,34,0.2)] rounded">
+                                    <button
+                                        class="input__minus text-[0.865rem] w-[1.9rem] h-[1.9rem] relative cursor-pointer bg-transparent p-0 text-center border-0 leading-none"
+                                        data-qty-dec aria-label="Decrease quantity">
+                                        -
+                                    </button>
+                                    <input type="number" value="1" min="0" step="1" name="item-quantity" class="p-0 rounded-none bg-transparent border-l border-r border-t-0 border-b-0 border-[rgba(33,35,34,0.2)]
+                                text-center w-[2.375rem] h-[1.9rem] text-[#212121] text-[0.865rem] appearance-none"
+                                        data-qty-input />
+                                    <button
+                                        class="input__plus text-[0.865rem] w-[1.9rem] h-[1.9rem] relative cursor-pointer bg-transparent p-0 text-center border-0 leading-none"
+                                        data-qty-inc aria-label="Increase quantity">
+                                        +
+                                    </button>
+                                </div>
+
+                                <button class="cart-drawer-item__remove block cursor-pointer hover:opacity-70" data-remove
+                                    aria-label="Remove item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="size-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cart-drawer_product-price font-secondary" data-line-total>$10.00</div>
+                </div>
+
+                <!-- Duplicate the .cart-drawer-item above for more items; just change data-price and defaults -->
+                <div class="cart-drawer-item flex justify-between gap-5 mb-[30px] pb-[30px] border-b border-[rgba(33,35,34,0.2)] last:border-b-0 last:mb-0"
+                    data-item data-price="24.00">
+                    <div class="flex gap-5">
+                        <div>
+                            <a href="#">
+                                <img class="w-[clamp(80px,10vw,120px)] object-contain transition-opacity duration-200 hover:opacity-70"
+                                    src="https://via.placeholder.com/160" alt="Daily Cleanser">
+                            </a>
+                        </div>
+
+                        <div class="cart-drawer_product-details">
+                            <div class="product-name mb-3.5">
+                                <a href="#"
+                                    class="font-secondary text-base text-[#3e4827] hover:text-[rgba(62,72,39,0.7)] transition-colors duration-200 font-normal">
+                                    Daily Cleanser
+                                </a>
+                                <div class="font-secondary text-[#535353] text-xs mt-0.5">8oz / Unscented</div>
+                            </div>
+
+                            <div
+                                class="cart-drawer_item__quantity flex flex-wrap gap-[12px] items-center justify-start w-full">
+                                <div class="item__quantity__input flex border border-[rgba(33,35,34,0.2)] rounded">
+                                    <button class="input__minus text-[0.865rem] w-[1.9rem] h-[1.9rem]" data-qty-dec
+                                        aria-label="Decrease quantity">-</button>
+                                    <input type="number" value="2" min="0" step="1" class="p-0 rounded-none bg-transparent border-l border-r border-[rgba(33,35,34,0.2)]
+                         text-center w-[2.375rem] h-[1.9rem] text-[#212121] text-[0.865rem]" data-qty-input>
+                                    <button class="input__plus text-[0.865rem] w-[1.9rem] h-[1.9rem]" data-qty-inc
+                                        aria-label="Increase quantity">+</button>
+                                </div>
+                                <button class="cart-drawer-item__remove block cursor-pointer hover:opacity-70" data-remove
+                                    aria-label="Remove item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="size-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cart-drawer_product-price font-secondary" data-line-total>$48.00</div>
+                </div>
+
+                
+            </div>
+
+            <!-- Footer -->
+            <div class="px-5 py-5 border-t border-[rgba(33,35,34,0.2)]">
+                <div class="flex items-center justify-between text-lg mb-3 font-secondary">
+                    <span
+                        class="font-secondary">Subtotal</span>
+                    <span data-subtotal>$58.00</span>
+                </div>
+                <p class="text-xs text-gray-500 mb-4 font-secondary">Taxes and shipping calculated at checkout.</p>
+                <div class="flex gap-3">
+                    <a href="/cart"
+                        class="flex-1 px-4 py-2  border border-[rgba(33,35,34,0.2)] uppercase tracking-[1px] text-xs hover:bg-gray-50 text-center">View
+                        cart</a>
+                    <a href="/checkout"
+                        class="flex-1 px-4 py-2  bg-[#212322] text-white uppercase tracking-[1px] text-xs hover:opacity-90 text-center">Checkout</a>
+                </div>
+            </div>
+
+        </aside>
+    </div>
+
+    <script>
+        // Elements
+        const root = document.getElementById('cart-root');
+        const overlay = root.querySelector('[data-cart-overlay]');
+        const drawer = root.querySelector('[data-cart-drawer]');
+        const openers = document.querySelectorAll('[data-cart-open]');
+        const closer = root.querySelector('[data-cart-close]');
+        const itemsWrap = root.querySelector('[data-cart-items]');
+        const subtotalEl = root.querySelector('[data-subtotal]');
+
+        let scrollY = 0;
+
+        // Open/close
+        function openCart() {
+            // Lock body
+            document.body.style.position = 'fixed';
+            document.body.style.top = `-${scrollY}px`;
+            document.body.style.left = '0';
+            document.body.style.right = '0';
+            document.body.style.overflow = 'hidden';
+            document.body.style.width = '100%';
+
+            root.classList.remove('hidden');
+            requestAnimationFrame(() => {
+                overlay.classList.remove('opacity-0');
+                drawer.classList.remove('translate-x-full');
+            });
+        }
+        function closeCart() {
+            // Unlock body
+            document.body.style.position = '';
+            document.body.style.top = '';
+            document.body.style.left = '';
+            document.body.style.right = '';
+            document.body.style.overflow = '';
+            document.body.style.width = '';
+
+            // Restore scroll
+            window.scrollTo(0, scrollY);
+
+            overlay.classList.add('opacity-0');
+            drawer.classList.add('translate-x-full');
+            setTimeout(() => root.classList.add('hidden'), 300);
+        }
+
+        openers.forEach(btn => btn.addEventListener('click', openCart));
+        overlay.addEventListener('click', closeCart);
+        closer.addEventListener('click', closeCart);
+        document.addEventListener('keydown', (e) => (e.key === 'Escape') && !root.classList.contains('hidden') && closeCart());
+
+        // Helpers
+        const currency = (n) => `$${n.toFixed(2)}`;
+
+        function recalcLineTotal(itemEl) {
+            const price = parseFloat(itemEl.dataset.price || '0');
+            const qtyInput = itemEl.querySelector('[data-qty-input]');
+            const qty = Math.max(0, parseInt(qtyInput.value || '0', 10));
+            const lineTotal = itemEl.querySelector('[data-line-total]');
+            const total = price * qty;
+            lineTotal.textContent = currency(total);
+            return total;
+        }
+
+        function recalcSubtotal() {
+            let sum = 0;
+            root.querySelectorAll('[data-item]').forEach(item => {
+                const qty = parseInt(item.querySelector('[data-qty-input]')?.value || '0', 10);
+                if (qty > 0) sum += parseFloat(item.dataset.price || '0') * qty;
+            });
+            subtotalEl.textContent = currency(sum);
+        }
+
+        // Qty controls (event delegation)
+        itemsWrap.addEventListener('click', (e) => {
+            const dec = e.target.closest('[data-qty-dec]');
+            const inc = e.target.closest('[data-qty-inc]');
+            const remove = e.target.closest('[data-remove]');
+            if (!dec && !inc && !remove) return;
+
+            const item = e.target.closest('[data-item]');
+            const input = item.querySelector('[data-qty-input]');
+
+            if (dec) {
+                input.value = Math.max(0, parseInt(input.value || '0', 10) - 1);
+                recalcLineTotal(item); recalcSubtotal();
+                if (parseInt(input.value, 10) === 0) fadeRemove(item);
+            }
+            if (inc) {
+                input.value = Math.max(0, parseInt(input.value || '0', 10) + 1);
+                recalcLineTotal(item); recalcSubtotal();
+            }
+            if (remove) {
+                fadeRemove(item);
+            }
+        });
+
+        itemsWrap.addEventListener('change', (e) => {
+            const input = e.target.closest('[data-qty-input]');
+            if (!input) return;
+            const item = e.target.closest('[data-item]');
+            if (parseInt(input.value || '0', 10) <= 0) {
+                fadeRemove(item);
+            } else {
+                recalcLineTotal(item); recalcSubtotal();
+            }
+        });
+
+        function fadeRemove(item) {
+            item.style.transition = 'opacity 200ms ease, height 200ms ease, margin 200ms ease, padding 200ms ease';
+            item.style.opacity = '0';
+            item.style.height = '0';
+            item.style.margin = '0';
+            item.style.padding = '0';
+            setTimeout(() => {
+                item.remove();
+                recalcSubtotal();
+                // fix last:border utilities after remove (optional)
+                const items = [...itemsWrap.querySelectorAll('[data-item]')];
+                items.forEach((el, i) => {
+                    if (i === items.length - 1) {
+                        el.classList.add('last:border-b-0', 'last:mb-0');
+                    }
+                });
+            }, 220);
+        }
+
+        // Initial calc
+        root.querySelectorAll('[data-item]').forEach(el => recalcLineTotal(el));
+        recalcSubtotal();
+    </script>
+
 
     <!-- START OF HERO SECTION -->
     <section class="hero mb-16 relative">

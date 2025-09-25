@@ -447,7 +447,7 @@
 
     <!-- CART DRAWER -->
     <!-- Trigger(s) -->
-    <button class="px-4 py-2 rounded-lg bg-[#212322] text-white" data-cart-open>
+    <button class="px-4 py-2 rounded-lg bg-[#212322] text-white" data-cart-openXX>
         Open cart
     </button>
 
@@ -495,7 +495,7 @@
 
                             <div
                                 class="cart-drawer_item__quantity flex flex-wrap gap-[12px] items-center justify-start w-full">
-                                <div class="item__quantity__input flex border border-[rgba(33,35,34,0.2)] rounded">
+                                <div class="item__quantity__input flex border border-[rgba(33,35,34,0.2)] ">
                                     <button
                                         class="input__minus text-[0.865rem] w-[1.9rem] h-[1.9rem] relative cursor-pointer bg-transparent p-0 text-center border-0 leading-none"
                                         data-qty-dec aria-label="Decrease quantity">
@@ -511,8 +511,8 @@
                                     </button>
                                 </div>
 
-                                <button class="cart-drawer-item__remove block cursor-pointer hover:opacity-70" data-remove
-                                    aria-label="Remove item">
+                                <button class="cart-drawer-item__remove block cursor-pointer hover:opacity-70"
+                                    data-remove aria-label="Remove item">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="1.5" stroke="currentColor" class="size-5">
                                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -556,8 +556,8 @@
                                     <button class="input__plus text-[0.865rem] w-[1.9rem] h-[1.9rem]" data-qty-inc
                                         aria-label="Increase quantity">+</button>
                                 </div>
-                                <button class="cart-drawer-item__remove block cursor-pointer hover:opacity-70" data-remove
-                                    aria-label="Remove item">
+                                <button class="cart-drawer-item__remove block cursor-pointer hover:opacity-70"
+                                    data-remove aria-label="Remove item">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="1.5" stroke="currentColor" class="size-5">
                                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -571,14 +571,13 @@
                     <div class="cart-drawer_product-price font-secondary" data-line-total>$48.00</div>
                 </div>
 
-                
+
             </div>
 
             <!-- Footer -->
             <div class="px-5 py-5 border-t border-[rgba(33,35,34,0.2)]">
                 <div class="flex items-center justify-between text-lg mb-3 font-secondary">
-                    <span
-                        class="font-secondary">Subtotal</span>
+                    <span class="font-secondary">Subtotal</span>
                     <span data-subtotal>$58.00</span>
                 </div>
                 <p class="text-xs text-gray-500 mb-4 font-secondary">Taxes and shipping calculated at checkout.</p>
@@ -589,6 +588,16 @@
                     <a href="/checkout"
                         class="flex-1 px-4 py-2  bg-[#212322] text-white uppercase tracking-[1px] text-xs hover:opacity-90 text-center">Checkout</a>
                 </div>
+            </div>
+
+            <!-- EMPTY CART -->
+            <div class="empy-cart px-5 py-10 text-center">
+                <h3 class="uppercase mb-2 text-[#3e4827] text-base">Your cart is empty!</h3>
+                <p class="font-secondary mb-4">Add items to your cart.</p>
+                <a href="#"
+                    class="block text-center bg-[#3e4827] text-[#ffffff] uppercase text-sm py-[9px] px-[30px] leading-[30px] tracking-[1px] transition-all duration-200 ease-in-out hover:bg-[#5a6939] w-full">
+                    Shop now
+                </a>
             </div>
 
         </aside>
